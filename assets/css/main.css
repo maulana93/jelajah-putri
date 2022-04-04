@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira+Condensed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+p{
+    font-family: georgia;
+    font-size: 18px;
+}
 .navbar{
     width: 100%;
     background: #00000080;
@@ -74,6 +78,9 @@
     line-height: 25px;
     letter-spacing: 0.08em;
 }
+.carousel-caption p{
+    font-family: 'Barlow', sans-serif;
+}
 i.bi-search{
     color: #fff;
 }
@@ -100,7 +107,7 @@ i.bi-search{
     margin-bottom: 0;
     color: #4F4D8C !important;
 }
-.update-news a:hover, .article a:hover{
+.update-news a:hover, .article a:hover, .headline-kanal a:hover{
     text-decoration: none;
 }
 .article h4{
@@ -160,9 +167,10 @@ i.bi-search{
     font-style: normal;
     font-weight: 700;
     font-size: 50px;
-    line-height: 79px;
+    line-height: 35px;
     letter-spacing: 0.02em;
     color: #908EBF;
+    margin-bottom: 25px;
 }
 .navbar--page img{
     height: 70px;
@@ -173,4 +181,64 @@ i.bi-search{
 .navbar--page{
     position: relative;
     z-index: unset;
+}
+h1.title-page{
+    border-bottom: 1px solid #908EBF;
+}
+.btn-cancel{
+    background: #F0F0F0;
+    color: #111;
+}
+.btn-submit{
+    background: #9894FB;
+    color: #fff;
+}
+.contact-form .form-control{
+    background: #F0F0F0;
+    border-radius: 0;
+}
+.contact-form .btn{
+    padding: 5px 40px;
+    border-radius: 0;
+}
+.title-kanal{
+    border-bottom: 1px solid #908EBF;
+}
+.title-kanal h1{
+    font-family: 'Saira Condensed';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 35px;
+    letter-spacing: 0.02em;
+    color: #908EBF;
+    margin-bottom: 0;
+}
+.title-kanal p{
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 0;
+    letter-spacing: -0.01em;    
+    color: #111111;
+    margin: 18px 0 0 25px;
+}
+.main-headline-title{
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -0.01em;
+    color: #111111;
+}
+.headline-title{
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: -0.01em;
+    color: #111111;
 }

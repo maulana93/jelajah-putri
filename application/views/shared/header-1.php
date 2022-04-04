@@ -25,14 +25,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto ml-5">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home</a>
+                        <li class="nav-item <?php if(isset($menu_active) && $menu_active == 'home'){ echo 'active'; } ?>">
+                            <a class="nav-link" href="<?php echo base_url(); ?>">Home</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item <?php if(isset($menu_active) && $menu_active == 'about'){ echo 'active'; } ?>">
                             <a class="nav-link" href="<?php echo base_url().'about'; ?>">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Bekerja</a>
+                            <a class="nav-link" href="<?php echo base_url().'kanal'; ?>">Bekerja</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Bertualang</a>
@@ -43,8 +43,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li class="nav-item">
                             <a class="nav-link" href="#">Opini</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Kontak</a>
+                        <li class="nav-item <?php if(isset($menu_active) && $menu_active == 'kontak'){ echo 'active'; } ?>">
+                            <a class="nav-link" href="<?php echo base_url().'kontak'; ?>">Kontak</a>
                         </li>
                     </ul>
                     <button class="btn my-2 my-sm-0 ml-auto" type="submit"><i class="bi bi-search"></i></button>

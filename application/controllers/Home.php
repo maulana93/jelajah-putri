@@ -11,6 +11,7 @@ public function __construct()
 	public function index()
 	{
 		$data['title'] = 'Jelajah Putri';
+		$data['menu_active'] = 'home';
 		$this->load->view('index',$data);
 	}
 }

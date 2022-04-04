@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class About extends CI_Controller {
+class Kanal extends CI_Controller {
 public function __construct()
 {
 	parent::__construct();
@@ -10,8 +10,8 @@ public function __construct()
 }
 	public function index()
 	{
-		$data['title'] = 'Jelajah Putri - About';
-		$data['menu_active'] = 'about';
-		$this->load->view('about',$data);
+		$data['title'] = 'Jelajah Putri - Kanal';
+		$data['menu_active'] = '';
+		$this->load->view('kanal',$data);
 	}
 }
