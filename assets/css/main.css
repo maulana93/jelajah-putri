@@ -107,7 +107,7 @@ i.bi-search{
     margin-bottom: 0;
     color: #4F4D8C !important;
 }
-.update-news a:hover, .article a:hover, .headline-kanal a:hover{
+.update-news a:hover, .article a:hover, .headline-kanal a:hover, .list-news a:hover{
     text-decoration: none;
 }
 .article h4{
@@ -241,4 +241,48 @@ h1.title-page{
     line-height: 26px;
     letter-spacing: -0.01em;
     color: #111111;
+}
+.headline-kanal{
+    margin-bottom: 20px;
+}
+.headline-kanal p{
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #111111;
+}
+.list-news h2{
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -0.01em;
+    color: #111111;
+}
+.list-news p{
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    color: #111111;
+}
+.btn-load-more{
+    margin: 40px 0;
+    border-radius: 0;
+    padding: 10px 100px;
+    background: #F0F0F0;
+}
+.input-group--search input{
+    border: 1px solid #ccc;
+    border-right: none;
+}
+.input-group--search .btn-search{
+    border: 1px solid #ccc;
+    border-left: none;
 }

@@ -53,3 +53,8 @@ $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['bekerja'] = "kanal/index/bekerja";
+$route['bertualang'] = "kanal/index/bertualang";
+$route['berbakti'] = "kanal/index/berbakti";
+$route['opini'] = "kanal/index/opini";
+

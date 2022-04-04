@@ -31,17 +31,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <li class="nav-item <?php if(isset($menu_active) && $menu_active == 'about'){ echo 'active'; } ?>">
                             <a class="nav-link" href="<?php echo base_url().'about'; ?>">About</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?php echo base_url().'kanal'; ?>">Bekerja</a>
+                        <li class="nav-item <?php if(isset($menu_active) && $menu_active == 'bekerja'){ echo 'active'; } ?>">
+                            <a class="nav-link" href="<?php echo base_url().'bekerja'; ?>">Bekerja</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Bertualang</a>
+                        <li class="nav-item <?php if(isset($menu_active) && $menu_active == 'bertualang'){ echo 'active'; } ?>">
+                            <a class="nav-link" href="<?php echo base_url().'bertualang'; ?>">Bertualang</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Berbakti</a>
+                        <li class="nav-item <?php if(isset($menu_active) && $menu_active == 'berbakti'){ echo 'active'; } ?>">
+                            <a class="nav-link" href="<?php echo base_url().'berbakti'; ?>">Berbakti</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Opini</a>
+                        <li class="nav-item <?php if(isset($menu_active) && $menu_active == 'opini'){ echo 'active'; } ?>">
+                            <a class="nav-link" href="<?php echo base_url().'opini'; ?>">Opini</a>
                         </li>
                         <li class="nav-item <?php if(isset($menu_active) && $menu_active == 'kontak'){ echo 'active'; } ?>">
                             <a class="nav-link" href="<?php echo base_url().'kontak'; ?>">Kontak</a>
