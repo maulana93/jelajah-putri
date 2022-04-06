@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <body>
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="<?php echo base_url(); ?>">
                     <img src="<?php echo base_url().'assets/images/LOGO JELAJAH PUTRI 2022-02 1.png'; ?>" class="img-fluid">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <a class="nav-link" href="<?php echo base_url().'kontak'; ?>">Kontak</a>
                         </li>
                     </ul>
-                    <button class="btn my-2 my-sm-0 ml-auto" type="submit"><i class="bi bi-search"></i></button>
+                    <button class="btn my-2 my-sm-0 ml-auto" type="button" onclick="location.href='<?php echo base_url().'search'; ?>';"><i class="bi bi-search"></i></button>
                 </div>
                 </div>
             </div>

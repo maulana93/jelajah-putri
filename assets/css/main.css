@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap');
 p{
     font-family: georgia;
     font-size: 18px;
@@ -131,18 +130,22 @@ i.bi-search{
     background: #F0F0F0;
 }
 .footer a.nav-link{
-    line-height: 2;
-    padding: 0 25px 0 0;
     font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
     color: #111111;
 }
 .footer p{
-    line-height: 2;
     font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
     font-size: 16px;
-    text-align: right;
+    line-height: 22px;
     color: #111111;
     margin-bottom: 0;
+    margin-top: 5px;
 }
 .sidebar h4{
     font-family: 'Saira Condensed';
@@ -285,4 +288,52 @@ h1.title-page{
 .input-group--search .btn-search{
     border: 1px solid #ccc;
     border-left: none;
+}
+.breadcrumb{
+    background: none;
+    margin-bottom: 0;
+}
+.breadcrumb-item a{
+    color: #111;
+}
+.breadcrumb-item.active{
+    color: #999;
+}
+.news-detail h1{
+    font-family: 'Barlow', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 54px;
+    letter-spacing: -0.01em;
+    color: #111111;
+}
+.detail-info p{
+    font-family: 'Barlow', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #111111;
+    margin-bottom: 0;
+}
+.detail-info span{
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #999999;
+}
+.detail-share img{
+    width: 25px;
+}
+.section-title{
+    font-family: 'Saira Condensed';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 31px;
+    letter-spacing: 0.02em;
+    color: #908EBF;
 }

@@ -39,7 +39,7 @@
             <div class="col-lg-9">
                 <div class="update-news d-flex align-items-center justify-content-between mb-5">
                     <h3>BEKERJA</h3>
-                    <a href="">Selengkapnya »</a>
+                    <a href="<?php echo base_url().'bekerja'; ?>">Selengkapnya »</a>
                 </div>
                 <div class="row article mb-5">
                     <div class="col-lg-4">
@@ -64,7 +64,7 @@
 
                 <div class="update-news d-flex align-items-center justify-content-between mb-5">
                     <h3>BERTUALANG</h3>
-                    <a href="">Selengkapnya »</a>
+                    <a href="<?php echo base_url().'bertualang'; ?>">Selengkapnya »</a>
                 </div>
                 <div class="row article mb-5">
                     <div class="col-lg-4">
@@ -89,7 +89,7 @@
 
                 <div class="update-news d-flex align-items-center justify-content-between mb-5">
                     <h3>BERBAKTI</h3>
-                    <a href="">Selengkapnya »</a>
+                    <a href="<?php echo base_url().'berbakti'; ?>">Selengkapnya »</a>
                 </div>
                 <div class="row article mb-5">
                     <div class="col-lg-4">
@@ -114,7 +114,7 @@
 
                 <div class="update-news d-flex align-items-center justify-content-between mb-5">
                     <h3>OPINI</h3>
-                    <a href="">Selengkapnya »</a>
+                    <a href="<?php echo base_url().'opini'; ?>">Selengkapnya »</a>
                 </div>
                 <div class="row article article--opini mb-5">
                     <div class="col-lg-4">
