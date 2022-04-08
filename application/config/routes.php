@@ -58,3 +58,6 @@ $route['bertualang'] = "kanal/index/bertualang";
 $route['berbakti'] = "kanal/index/berbakti";
 $route['opini'] = "kanal/index/opini";
 
+$route['login'] = "cms/login";
+
+

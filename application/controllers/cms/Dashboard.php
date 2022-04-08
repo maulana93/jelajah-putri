@@ -13,6 +13,6 @@ public function __construct()
 		$data['title'] = 'Dashboard Jelajahputri';
 		$data['alert'] = '';
 		$data['active_menu'] = '1';
-		$this->load->view('cms/v_dashboard',$data);
+		$this->load->view('cms/dashboard',$data);
 	}
 }
