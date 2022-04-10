@@ -16,3 +16,7 @@
 .menu-bar a.nav-link:hover{
     color: #fff;
 }   
+.dropdown-menu{
+    left: unset;
+    right: 0;
+}
