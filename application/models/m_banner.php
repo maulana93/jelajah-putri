@@ -1,5 +1,5 @@
 <?php
-Class M_cover extends CI_Model
+Class M_banner extends CI_Model
 {
 	public function listdata($params=array())
 	{
@@ -11,7 +11,7 @@ Class M_cover extends CI_Model
 			$conditional .= "AND id = '".$this->db->escape_str($id)."'";
 		}
 
-		$mysql = "select * from cover ".$conditional."";
+		$mysql = "select * from banner ".$conditional."";
 		$q = $this->db->query($mysql);
 		$result = $q->result_array();
 		return $result;
@@ -20,11 +20,11 @@ Class M_cover extends CI_Model
 	public function insertData($params=array()){
 		$data ['id'] = "Null";
 		$data ['title'] = isset($params["title"])?$params["title"]:'';
-		$data ['summary'] = isset($params["summary"])?$params["summary"]:'';
+		$data ['url'] = isset($params["url"])?$params["url"]:'';
 		$data ['image'] = isset($params["image"])?$params["image"]:'';
 		$data ['status'] = isset($params["status"])?$params["status"]:'';
 
-		$insert = $this->db->insert('cover', $data);
+		$insert = $this->db->insert('banner', $data);
 		if($insert){
 			return 'success';
 		} else {
@@ -35,19 +35,19 @@ Class M_cover extends CI_Model
 	public function updateData($params=array()){
 		$id = isset($params["id"])?$params["id"]:'';
 		$title = isset($params["title"])?$params["title"]:'';
-		$summary = isset($params["summary"])?$params["summary"]:'';
+		$url = isset($params["url"])?$params["url"]:'';
 		$image = isset($params["image"])?$params["image"]:'';
 		$status = isset($params["status"])?$params["status"]:'';
 
 		$data = "
 			title = '".$this->db->escape_str($title)."'
-			,summary = '".$this->db->escape_str($summary)."'
+			,url = '".$this->db->escape_str($url)."'
 			,image = '".$this->db->escape_str($image)."'
 			,status = '".$this->db->escape_str($status)."'
 		";
 					
 		$select = $this->db->query("
-			UPDATE cover
+			UPDATE banner
 			SET
 				".$data."
 			WHERE
@@ -63,7 +63,7 @@ Class M_cover extends CI_Model
 
 	function delete_data($id){
 		$this->db->where('id', $id);
-		$this->db->delete('cover');
+		$this->db->delete('banner');
 	}
 }
 ?>

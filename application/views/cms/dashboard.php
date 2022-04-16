@@ -5,7 +5,8 @@
 				<?php $this->load->view('cms/shared/menu'); ?>
 			</div>
 			<div class="col-lg-10 content">
-				<h1>Dashboard</h1>
+				<h3>Selamat datang, <?php echo $this->session->userdata('SESSION_NAME'); ?></h3>
+				<p>Ini adalah content management system website Jelajah Putri. Anda bisa mengelola konten website lewat halaman ini.</p>
 			</div>
 		</div>
 	</div>

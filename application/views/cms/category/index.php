@@ -5,7 +5,14 @@
 				<?php $this->load->view('cms/shared/menu'); ?>
 			</div>
 			<div class="col-lg-10 content">
-				<h1>Category</h1>
+				<div class="row">
+					<div class="col-lg-6">
+						<h3 class="mb-0">Category</h3><small>List Data</small>
+					</div>
+					<div class="col-lg-6 text-right">
+						<a class="btn btn-primary" href="<?php echo base_url().'cms/category/add'; ?>">Tambah Data</a>
+					</div>
+				</div>
 				<table class="table table-bordered"> 
 					<thead> 
 						<tr> 
@@ -17,16 +24,21 @@
 					</thead> 
 					<tbody>
 						<?php
-							if($category){
+							if($lists){
 								$no = 1;
-								foreach ($category as $key => $value){
+								foreach ($lists as $key => $value){
+									$status = 'Aktif';
+									if($value['status'] == 0){
+										$status = 'Tidak Aktif';
+									}
 								?>
 								<tr>
 									<td><?php echo $no; ?></td>
-									<td><?php echo $value->title; ?></td>
+									<td><?php echo $value['title']; ?></td>
 									<td><?php echo $status; ?></td>
 									<td>
-										<a class="btn btn-warning" href="<?php echo base_url().'admin/proses/'.$value->id; ?>">Edit</a>
+										<a class="btn btn-small btn-warning" href="<?php echo base_url().'cms/category/edit/'.$value['id']; ?>">Edit</a>
+										<a class="btn btn-warning" href="<?php echo base_url().'cms/category/delete/'.$value['id']; ?>">Hapus</a>
 									</td>
 								</tr> 
 								<?php

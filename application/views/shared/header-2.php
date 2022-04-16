@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <nav class="navbar navbar-expand-lg navbar-light navbar--page">
             <div class="container">
                 <a class="navbar-brand" href="<?php echo base_url(); ?>">
-                    <img src="<?php echo base_url().'assets/images/LOGO JELAJAH PUTRI 2022-02 1.png'; ?>" class="img-fluid">
+                    <img src="<?php echo base_url().'assets/images/header-cover/LOGO JELAJAH PUTRI 2022-02 1.png'; ?>" class="img-fluid">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

@@ -5,32 +5,42 @@
 				<?php $this->load->view('cms/shared/menu'); ?>
 			</div>
 			<div class="col-lg-10 content">
-				<h1>Content</h1>
+				<div class="row">
+					<div class="col-lg-6">
+						<h3 class="mb-0">Header Cover</h3><small>List Data</small>
+					</div>
+					<div class="col-lg-6 text-right">
+						<a class="btn btn-primary" href="<?php echo base_url().'cms/header_cover/add'; ?>">Tambah Data</a>
+					</div>
+				</div>
 				<table class="table table-bordered"> 
 					<thead> 
 						<tr> 
 							<th>No</th>
 							<th>Judul</th>
-							<th>Kategori</th>
-							<th>Headline</th>
+							<th>Ringkasan</th>
 							<th>Status</th>
 							<th>Opsi</th>
 						</tr> 
 					</thead> 
 					<tbody>
 						<?php
-							if($content){
+							if($lists){
 								$no = 1;
-								foreach ($content as $key => $value){
+								foreach ($lists as $key => $value){
+									$status = 'Aktif';
+									if($value['status'] == 0){
+										$status = 'Tidak Aktif';
+									}
 								?>
 								<tr>
 									<td><?php echo $no; ?></td>
-									<td><?php echo $value->title; ?></td>
-									<td><?php echo $value->category; ?></td>
-									<td><?php echo $value->headline; ?></td>
+									<td><?php echo $value['title']; ?></td>
+									<td><?php echo $value['summary']; ?></td>
 									<td><?php echo $status; ?></td>
 									<td>
-										<a class="btn btn-warning" href="<?php echo base_url().'admin/proses/'.$value->id; ?>">Edit</a>
+										<a class="btn btn-small btn-warning" href="<?php echo base_url().'cms/header_cover/edit/'.$value['id']; ?>">Edit</a>
+										<a class="btn btn-warning" href="<?php echo base_url().'cms/header_cover/delete/'.$value['id']; ?>">Hapus</a>
 									</td>
 								</tr> 
 								<?php
