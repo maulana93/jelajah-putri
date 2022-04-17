@@ -30,7 +30,7 @@
 							</div>
 							<div class="form-group">
 								<label>Foto</label><br>
-								<img src="<?php echo isset($lists[0]['image'])?base_url().$lists[0]['image']:''; ?>" class="img-responsive">
+								<img src="<?php echo isset($lists[0]['image'])?base_url().$lists[0]['image']:''; ?>" class="img-fluid">
 								<input type="file" class="form-control" name="image">
 							</div>
 							<div class="form-group">

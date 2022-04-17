@@ -7,10 +7,10 @@
 			<div class="col-lg-10 content">
 				<div class="row">
 					<div class="col-lg-6">
-						<h3 class="mb-0">Header Cover</h3><small>List Data</small>
+						<h3 class="mb-0">Content</h3><small>List Data</small>
 					</div>
 					<div class="col-lg-6 text-right">
-						<a class="btn btn-primary" href="<?php echo base_url().'cms/header_cover/add'; ?>">Tambah Data</a>
+						<a class="btn btn-primary" href="<?php echo base_url().'cms/content/add'; ?>">Tambah Data</a>
 					</div>
 				</div>
 				<table class="table table-bordered"> 
@@ -18,7 +18,8 @@
 						<tr> 
 							<th>No</th>
 							<th>Judul</th>
-							<th>Ringkasan</th>
+							<th>Kategori</th>
+							<th>Headline</th>
 							<th>Status</th>
 							<th>Opsi</th>
 						</tr> 
@@ -36,11 +37,12 @@
 								<tr>
 									<td><?php echo $no; ?></td>
 									<td><?php echo $value['title']; ?></td>
-									<td width="500"><?php echo $value['summary']; ?></td>
+									<td><?php echo $value['id_category']; ?></td>
+									<td><?php echo $value['is_headline']; ?></td>
 									<td><?php echo $status; ?></td>
 									<td>
-										<a class="btn btn-small btn-warning" href="<?php echo base_url().'cms/header_cover/edit/'.$value['id']; ?>">Edit</a>
-										<a class="btn btn-warning" href="<?php echo base_url().'cms/header_cover/delete/'.$value['id']; ?>">Hapus</a>
+										<a class="btn btn-small btn-warning" href="<?php echo base_url().'cms/content/edit/'.$value['id']; ?>">Edit</a>
+										<a class="btn btn-warning" href="<?php echo base_url().'cms/content/delete/'.$value['id']; ?>">Hapus</a>
 									</td>
 								</tr> 
 								<?php

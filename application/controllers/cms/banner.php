@@ -6,7 +6,7 @@ public function __construct()
 {
 	parent::__construct();
 	//get query
-	$this->load->model(array('m_user','m_banner'),'',TRUE);
+	$this->load->model(array('cms/m_user','cms/m_banner'),'',TRUE);
 	$this->load->library(array('form_validation','session'));	
 }
 	public function index()

@@ -6,7 +6,7 @@ public function __construct()
 {
 	parent::__construct();
 	//get query
-	$this->load->model(array('m_user','m_cover'),'',TRUE);
+	$this->load->model(array('cms/m_user','cms/m_cover'),'',TRUE);
 	$this->load->library(array('form_validation','session'));	
 }
 	public function index()
@@ -26,20 +26,22 @@ public function __construct()
 			$title = $this->input->post('title');
 			$summary = $this->input->post('summary');
 			$image = $_FILES["image"]["name"];
-			$image = str_replace(' ','_',$image);
 			$status = $this->input->post('status');
 
 			$path = 'assets/images/header-cover';
+			$ext = pathinfo($image, PATHINFO_EXTENSION);
+			$file_name = str_replace(' ','-',$title).'-'.date("Y-m-d-H-i-s").'.'.$ext;
+			$path_image = $path.'/'.$file_name;
 
 			$insert = $this->m_cover->insertData(array(
 				'title' => $title
 				,'summary' => $summary
-				,'image' => $path.'/'.$image
+				,'image' => $path_image
 				,'status' => $status
 			  ));
 
 			if($insert == 'success'){
-				$this->upload_photo('image',$image,$path);
+				$this->upload_photo('image',$file_name,$path);
 			}			
 						
 			redirect(base_url().'cms/header_cover');			
@@ -59,27 +61,29 @@ public function __construct()
 			$id = $this->input->post('id');
 			$title = $this->input->post('title');
 			$summary = $this->input->post('summary');
-			$new_image = $_FILES["image"]["name"];
-			$image = str_replace(' ','_',$new_image);
+			$status = $this->input->post('status');			
+
+			$image = $_FILES["image"]["name"];
 			$path = 'assets/images/header-cover';
-			$image = $path.'/'.$image;
+			$ext = pathinfo($image, PATHINFO_EXTENSION);
+			$file_name = str_replace(' ','-',$title).'-'.date("Y-m-d-H-i-s").'.'.$ext;
+			$path_image = $path.'/'.$file_name;
 
 			if($image == ''){
-				$image = $this->input->post('image_existing');
+				$path_image = $this->input->post('image_existing');
 			}
-			$status = $this->input->post('status');
 
 			$update = $this->m_cover->updateData(array(
 				'id' => $id
 				,'title'=>$title
 				,'summary'=>$summary
-				,'image' => $image
+				,'image' => $path_image
 				,'status'=>$status
 			));
 
-			if(!empty($new_image)){
+			if(!empty($image)){
 				if($update == 'success'){
-					$this->upload_photo('image',$image,$path);
+					$this->upload_photo('image',$file_name,$path);
 				}	
 			}	
 						
@@ -102,6 +106,12 @@ public function __construct()
 	private function upload_photo($files='',$file_name='',$path='')
 	{		
 		$this->load->library(array('upload'));
+
+		if(!is_dir($path)){
+		mkdir($path,0777,FALSE);
+		//copy index.html
+		//copy("./support/index.html",$path."index.html");
+		}
 				
 		if($_FILES[$files]['error']==4)  //if No file was uploaded. 
         return false;        

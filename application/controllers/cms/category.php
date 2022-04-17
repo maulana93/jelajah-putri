@@ -6,7 +6,7 @@ class Category extends CI_Controller {
 	{
 		parent::__construct();
 		//get query
-		$this->load->model(array('m_user','m_category'),'',TRUE);
+		$this->load->model(array('cms/m_user','cms/m_category'),'',TRUE);
 		$this->load->library(array('form_validation','session'));	
 	}
 	public function index()

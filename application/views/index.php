@@ -2,28 +2,40 @@
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-            <img src="<?php echo base_url().'assets/images/sample/putri-handayani22___bwxoxj9awlc___1 1.png'; ?>" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h2>Bekerja. Bertualang. Berbakti.</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <?php 
+                    if(isset($cover) && count($cover)>0){ 
+                        foreach($cover as $key => $value){
+                        ?>
+                            <img src="<?php echo base_url().$value['image']; ?>" class="d-block w-100">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2><?php echo $value['title'] ?></h2>
+                                <p><?php echo $value['summary'] ?></p>
+                            </div>
+                        <?php
+                        }
+                    }
+                ?>
             </div>
-            </div>
-            <div class="carousel-item">
-            <img src="<?php echo base_url().'assets/images/sample/putri-handayani22___bwxoxj9awlc___1 1 (1).png'; ?>" class="d-block w-100" alt="...">
-            <div class="carousel-caption carousel-caption--headline d-none d-md-block">
-                <div class="category">BERTUALANG</div>
-                <h2>Denali, here we come</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            </div>
-            </div>
-            <div class="carousel-item">
-            <img src="<?php echo base_url().'assets/images/sample/putri-handayani22___bwxoxj9awlc___1 1 (2).png'; ?>" class="d-block w-100" alt="...">
-            <div class="carousel-caption carousel-caption--headline d-none d-md-block">
-                <div class="category">BEKERJA</div>
-                <h2>Perempuan jadi Engineer? Kenapa Tidak?</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            </div>
-            </div>
+            <?php
+                if(isset($category) && count($category)>0){ 
+                    foreach($category as $key => $value){                            
+                    ?>
+                    <div class="carousel-item">
+                    <?php foreach($value['headline'] as $key => $content){ ?>
+                        <img src="<?php echo base_url().$content['image']; ?>" class="d-block w-100">
+                    <?php } ?>
+                        <div class="carousel-caption carousel-caption--headline d-none d-md-block">
+                            <div class="category"><?php echo $value['title'] ?></div>
+                        <?php foreach($value['headline'] as $key => $content){ ?>
+                            <h2><?php echo $content['title']; ?></h2>
+                            <p><?php echo $content['summary']; ?></p>
+                        <?php } ?>
+                        </div>
+                    </div>
+                    <?php
+                    }
+                }
+            ?>
         </div>
         <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -37,108 +49,44 @@
     <div class="container">
         <div class="row mt-5">
             <div class="col-lg-9">
-                <div class="update-news d-flex align-items-center justify-content-between mb-5">
-                    <h3>BEKERJA</h3>
-                    <a href="<?php echo base_url().'bekerja'; ?>">Selengkapnya »</a>
-                </div>
-                <div class="row article mb-5">
-                    <div class="col-lg-4">
-                        <a href="">
-                            <img src="<?php echo base_url().'assets/images/sample/Rectangle 13.png'; ?>" class="img-fluid mb-2">
-                            <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="">
-                            <img src="<?php echo base_url().'assets/images/sample/Rectangle 8.png'; ?>" class="img-fluid mb-2">
-                            <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="">
-                            <img src="<?php echo base_url().'assets/images/sample/Rectangle 9.png'; ?>" class="img-fluid mb-2">
-                            <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="update-news d-flex align-items-center justify-content-between mb-5">
-                    <h3>BERTUALANG</h3>
-                    <a href="<?php echo base_url().'bertualang'; ?>">Selengkapnya »</a>
-                </div>
-                <div class="row article mb-5">
-                    <div class="col-lg-4">
-                        <a href="">
-                            <img src="<?php echo base_url().'assets/images/sample/Rectangle 10.png'; ?>" class="img-fluid mb-2">
-                            <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="">
-                            <img src="<?php echo base_url().'assets/images/sample/Rectangle 11.png'; ?>" class="img-fluid mb-2">
-                            <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="">
-                            <img src="<?php echo base_url().'assets/images/sample/Rectangle 12.png'; ?>" class="img-fluid mb-2">
-                            <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="update-news d-flex align-items-center justify-content-between mb-5">
-                    <h3>BERBAKTI</h3>
-                    <a href="<?php echo base_url().'berbakti'; ?>">Selengkapnya »</a>
-                </div>
-                <div class="row article mb-5">
-                    <div class="col-lg-4">
-                        <a href="">
-                            <img src="<?php echo base_url().'assets/images/sample/Rectangle 13-1.png'; ?>" class="img-fluid mb-2">
-                            <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="">
-                            <img src="<?php echo base_url().'assets/images/sample/Rectangle 14.png'; ?>" class="img-fluid mb-2">
-                            <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="">
-                            <img src="<?php echo base_url().'assets/images/sample/Rectangle 15.png'; ?>" class="img-fluid mb-2">
-                            <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="update-news d-flex align-items-center justify-content-between mb-5">
-                    <h3>OPINI</h3>
-                    <a href="<?php echo base_url().'opini'; ?>">Selengkapnya »</a>
-                </div>
-                <div class="row article article--opini mb-5">
-                    <div class="col-lg-4">
-                        <a href="">
-                            <img src="<?php echo base_url().'assets/images/sample/Rectangle 16.png'; ?>" class="img-fluid mb-2">
-                            <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
-                            <p>Rina Damayanti</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="">
-                            <img src="<?php echo base_url().'assets/images/sample/Rectangle 17.png'; ?>" class="img-fluid mb-2">
-                            <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
-                            <p>Inem Parwati</p>
-                        </a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="">
-                            <img src="<?php echo base_url().'assets/images/sample/Rectangle 18.png'; ?>" class="img-fluid mb-2">
-                            <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h4>
-                            <p>Luna Maya</p>
-                        </a>
-                    </div>
-                </div>
+                <?php
+                    if(isset($category) && count($category)>0){ 
+                        foreach($category as $key => $value){                            
+                        ?>
+                        <div class="update-news d-flex align-items-center justify-content-between mb-5">
+                            <h3><?php echo $value['title']; ?></h3>
+                            <a href="<?php echo base_url().strtolower($value['title']); ?>">Selengkapnya »</a>
+                        </div>
+                        <?php if($value['id'] == 5) { ?>
+                            <div class="row article article--opini mb-5">
+                                <?php foreach($value['content'] as $key => $content){ ?>
+                                    <div class="col-lg-4">
+                                        <a href="">
+                                            <img src="<?php echo base_url().'assets/images/sample/Rectangle 13.png'; ?>" class="img-fluid mb-2">
+                                            <h4><?php echo $content['title']; ?></h4>
+                                            <?php foreach($content['penulis'] as $key => $penulis){ ?>
+                                                <p><?php echo $penulis['fullname']; ?></p>
+                                            <?php } ?>
+                                        </a>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                        <?php } else { ?>
+                            <div class="row article mb-5">
+                                <?php foreach($value['content'] as $key => $content){ ?>
+                                    <div class="col-lg-4">
+                                        <a href="">
+                                            <img src="<?php echo base_url().'assets/images/sample/Rectangle 13.png'; ?>" class="img-fluid mb-2">
+                                            <h4><?php echo $content['title']; ?></h4>
+                                        </a>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>
+                        <?php 
+                        }
+                    }
+                ?>
             </div>
             <div class="col-lg-3">
                 <?php $this->load->view('shared/sidebar'); ?>

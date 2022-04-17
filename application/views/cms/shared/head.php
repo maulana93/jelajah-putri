@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">Edit Profile</a>
-                        <a class="dropdown-item" href="#">Logout</a>
+                        <a class="dropdown-item" href="<?php echo base_url().'cms/login/logout'; ?>">Logout</a>
                         </div>
                     </li>
                 </ul>

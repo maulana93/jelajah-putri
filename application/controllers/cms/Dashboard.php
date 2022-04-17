@@ -6,7 +6,7 @@ public function __construct()
 {
 	parent::__construct();
 	//get query
-	$this->load->model(array('m_user'),'',TRUE);
+	$this->load->model(array('cms/m_user'),'',TRUE);
 	$this->load->library(array('session'));	
 }
 	public function index()

@@ -1,9 +1,11 @@
 .menu-bar{
-    height: 100vh;
+    min-height: 100vh;
     background: #4f5061;
     padding-top: 60px;
+    position: fixed;
 }
 .content{
+    margin-left: 225px;
     padding-top: 60px;
 }
 .menu-bar a.nav-link{

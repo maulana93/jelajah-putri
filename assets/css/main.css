@@ -76,6 +76,7 @@ p{
     font-size: 16px;
     line-height: 25px;
     letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 .carousel-caption p{
     font-family: 'Barlow', sans-serif;
@@ -96,6 +97,7 @@ i.bi-search{
     letter-spacing: 0.02em;
     color: #908EBF;
     line-height: 0.7;
+    text-transform: uppercase;
 }
 .update-news a{
     font-family: 'Barlow';
