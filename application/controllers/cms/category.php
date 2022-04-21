@@ -24,10 +24,14 @@ class Category extends CI_Controller {
 		if($this->input->post('simpan'))
 		{
 			$title = $this->input->post('title');
+			$slug = $this->input->post('slug');
+			$description = $this->input->post('description');
 			$status = $this->input->post('status');
 
 			$insert = $this->m_category->insertData(array(
 				'title' => $title
+				,'slug' => $slug
+				,'description' => $description
 				,'status' => $status
 			));
 						
@@ -47,11 +51,15 @@ class Category extends CI_Controller {
 		{			
 			$id = $this->input->post('id');
 			$title = $this->input->post('title');
+			$slug = $this->input->post('slug');
+			$description = $this->input->post('description');
 			$status = $this->input->post('status');
 
 			$update = $this->m_category->updateData(array(
 				'id' => $id
 				,'title'=>$title
+				,'slug' => $slug
+				,'description' => $description
 				,'status'=>$status
 			));
 						

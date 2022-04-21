@@ -22,6 +22,14 @@
 								<input type="text" class="form-control" name="title" required>
 							</div>
 							<div class="form-group">
+								<label>Slug</label>
+								<input type="text" class="form-control" name="slug" required>
+							</div>
+							<div class="form-group">
+								<label>Description</label>
+								<textarea class="form-control" name="description" required></textarea>
+							</div>
+							<div class="form-group">
 								<label>Status</label>
 								<div class="form-check">
 									<input class="form-check-input" type="radio" name="status" id="status1" value="1" checked>
