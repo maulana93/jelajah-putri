@@ -45,12 +45,15 @@
 							</div>
 							<div class="form-group">
 								<label>Konten</label>
-								<textarea class="form-control" name="body" required><?php echo isset($lists[0]['body'])?$lists[0]['body']:''; ?></textarea>
+								<textarea class="form-control" name="body" id="bodytextarea" required><?php echo isset($lists[0]['body'])?$lists[0]['body']:''; ?></textarea>
+								<script>
+									CKEDITOR.replace('bodytextarea');
+								</script>
 							</div>
 							<div class="form-group">
 								<label>Foto</label><br>
 								<img src="<?php echo isset($lists[0]['image'])?base_url().$lists[0]['image']:''; ?>" class="img-fluid"><br>
-								<input type="file" class="form-control" name="image" required>
+								<input type="file" class="form-control" name="image">
 							</div>
 							<div class="form-group">
 								<label>Headline</label>

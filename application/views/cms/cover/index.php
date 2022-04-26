@@ -40,7 +40,7 @@
 									<td><?php echo $status; ?></td>
 									<td>
 										<a class="btn btn-small btn-warning" href="<?php echo base_url().'cms/header_cover/edit/'.$value['id']; ?>">Edit</a>
-										<a class="btn btn-warning" href="<?php echo base_url().'cms/header_cover/delete/'.$value['id']; ?>">Hapus</a>
+										<a class="btn btn-danger" onClick="javascript: return confirm('Yakin ingin hapus data');" href="<?php echo base_url().'cms/header_cover/delete/'.$value['id']; ?>">Hapus</a>
 									</td>
 								</tr> 
 								<?php

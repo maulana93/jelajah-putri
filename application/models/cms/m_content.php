@@ -14,12 +14,14 @@ Class M_content extends CI_Model
 		$mysql = "select * from content ".$conditional."";
 		$q = $this->db->query($mysql);
 		$result = $q->result_array();
+		$result = $this->__getCategory($result);
 		return $result;
 	}
 	
 	public function insertData($params=array()){
 		$data ['id'] = "Null";
 		$data ['title'] = isset($params["title"])?$params["title"]:'';
+		$data ['slug'] = isset($params["slug"])?$params["slug"]:'';
 		$data ['id_category'] = isset($params["id_category"])?$params["id_category"]:'';
 		$data ['summary'] = isset($params["summary"])?$params["summary"]:'';
 		$data ['body'] = isset($params["body"])?$params["body"]:'';
@@ -40,6 +42,7 @@ Class M_content extends CI_Model
 	public function updateData($params=array()){
 		$id = isset($params["id"])?$params["id"]:'';
 		$title = isset($params["title"])?$params["title"]:'';
+		$slug = isset($params["slug"])?$params["slug"]:'';
 		$id_category = isset($params["id_category"])?$params["id_category"]:'';
 		$summary = isset($params["summary"])?$params["summary"]:'';
 		$body = isset($params["body"])?$params["body"]:'';
@@ -50,6 +53,7 @@ Class M_content extends CI_Model
 
 		$data = "
 			title = '".$this->db->escape_str($title)."'
+			,slug = '".$this->db->escape_str($slug)."'
 			,id_category = '".$this->db->escape_str($id_category)."'
 			,summary = '".$this->db->escape_str($summary)."'
 			,body = '".$this->db->escape_str($body)."'
@@ -77,6 +81,29 @@ Class M_content extends CI_Model
 	function delete_data($id){
 		$this->db->where('id', $id);
 		$this->db->delete('content');
+	}
+
+	private function __getCategory($result){
+		if (count($result) > 0) {
+			foreach ($result as $key => $value) {
+				if ($value['id_category'] != '') {
+					$result[$key]['category'] = $this->__getCategorySQL($value['id_category']);
+				}else{
+					$result[$key]['category'] = "";
+				}
+			}
+		}
+
+		return $result;
+	}
+
+	private function __getCategorySQL($id){
+		$result = array();
+		$query = $this->db->query("
+			SELECT * FROM category WHERE status = 1 AND id=".$id."
+		");
+		$result = $query->result_array();
+		return $result;
 	}
 }
 ?>

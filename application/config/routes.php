@@ -57,7 +57,7 @@ $route['bekerja'] = "kanal/index/bekerja";
 $route['bertualang'] = "kanal/index/bertualang";
 $route['berbakti'] = "kanal/index/berbakti";
 $route['opini'] = "kanal/index/opini";
-$route['detail/(:any)'] = "detail/index/$1";
+$route['detail/(:any)/(:any)'] = "detail/index/$1/$2";
 
 $route['login'] = "cms/login";
 

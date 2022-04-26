@@ -21,15 +21,11 @@
                     foreach($category as $key => $value){                            
                     ?>
                     <div class="carousel-item">
-                    <?php foreach($value['headline'] as $key => $content){ ?>
-                        <img src="<?php echo base_url().$content['image']; ?>" class="d-block w-100">
-                    <?php } ?>
+                        <img src="<?php echo base_url().$value['headline'][0]['image']; ?>" class="d-block w-100">
                         <div class="carousel-caption carousel-caption--headline d-none d-md-block">
                             <div class="category"><?php echo $value['title'] ?></div>
-                        <?php foreach($value['headline'] as $key => $content){ ?>
-                            <h2><?php echo $content['title']; ?></h2>
-                            <p><?php echo $content['summary']; ?></p>
-                        <?php } ?>
+                            <h2><?php echo $value['headline'][0]['title']; ?></h2>
+                            <p><?php echo $value['headline'][0]['summary']; ?></p>
                         </div>
                     </div>
                     <?php
@@ -58,26 +54,24 @@
                             <a href="<?php echo base_url().strtolower($value['title']); ?>">Selengkapnya »</a>
                         </div>
                         <?php if($value['id'] == 5) { ?>
-                            <div class="row article article--opini mb-5">
-                                <?php foreach($value['content'] as $key => $content){ ?>
-                                    <div class="col-lg-4">
-                                        <a href="">
-                                            <img src="<?php echo base_url().'assets/images/sample/Rectangle 13.png'; ?>" class="img-fluid mb-2">
-                                            <h4><?php echo $content['title']; ?></h4>
-                                            <?php foreach($content['penulis'] as $key => $penulis){ ?>
-                                                <p><?php echo $penulis['fullname']; ?></p>
-                                            <?php } ?>
-                                        </a>
-                                    </div>
+                            <div class="row article article--opini mb-4">
+                                <?php foreach($value['content'] as $key => $value){ ?>
+                                <div class="col-lg-4">
+                                    <a href="<?php echo url_format($value); ?>">
+                                        <img src="<?php echo base_url().$value['image']; ?>" class="img-fluid mb-2">
+                                        <h4><?php echo $value['title']; ?></h4>
+                                        <p><?php echo $value['penulis'][0]['fullname']; ?></p>
+                                    </a>
+                                </div>
                                 <?php } ?>
                             </div>
                         <?php } else { ?>
-                            <div class="row article mb-5">
-                                <?php foreach($value['content'] as $key => $content){ ?>
+                            <div class="row article mb-4">
+                                <?php foreach($value['content'] as $key => $value){ ?>
                                     <div class="col-lg-4">
-                                        <a href="">
-                                            <img src="<?php echo base_url().'assets/images/sample/Rectangle 13.png'; ?>" class="img-fluid mb-2">
-                                            <h4><?php echo $content['title']; ?></h4>
+                                        <a href="<?php echo url_format($value); ?>">
+                                            <img src="<?php echo base_url().$value['image']; ?>" class="img-fluid mb-2">
+                                            <h4 class="mb-3"><?php echo $value['title']; ?></h4>
                                         </a>
                                     </div>
                                 <?php } ?>

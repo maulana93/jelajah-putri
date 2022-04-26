@@ -7,6 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title><?php echo isset($title)?$title:''; ?></title>
+        <link rel="shortcut icon" href="<?php echo base_url().'assets/images/favicon.png'; ?>" type="image/png" />
         <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>assets/css/main.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">

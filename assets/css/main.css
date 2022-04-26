@@ -38,7 +38,7 @@ p{
     position: absolute;
     right: unset;
     top: 300px;
-    left: 15%;
+    left: 9%;
     z-index: 10;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -294,6 +294,7 @@ h1.title-page{
 .breadcrumb{
     background: none;
     margin-bottom: 0;
+    padding: 0.75rem 1rem 0.75rem 0;
 }
 .breadcrumb-item a{
     color: #111;
@@ -338,4 +339,24 @@ h1.title-page{
     line-height: 31px;
     letter-spacing: 0.02em;
     color: #908EBF;
+}
+.carousel-control-prev, .carousel-control-next{
+    width: 3%;
+    height: 50px;
+    background: rgba(0,0,0,0.5);
+    top: 50%;
+}
+.carousel-control-prev{
+    left: 20px;
+}
+.carousel-control-next{
+    right: 20px;
+}
+.detail-body img{
+    transition: 1s;
+}
+.detail-body img:hover{
+    -webkit-transform: scale(1.1);
+	transform: scale(1.1);
+    transition: 1s;
 }

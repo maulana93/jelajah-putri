@@ -24,6 +24,9 @@ public function __construct()
 		if($this->input->post('simpan'))
 		{
 			$title = $this->input->post('title');
+			$slug_input = str_replace(' ', '-',$title);
+			$slug_filter = preg_replace('/[^A-Za-z0-9\-]/', '',$slug_input);
+			$slug = strtolower($slug_filter);		
 			$id_category = $this->input->post('category');
 			$summary = $this->input->post('summary');
 			$body = $this->input->post('body');
@@ -41,6 +44,7 @@ public function __construct()
 
 			$insert = $this->m_content->insertData(array(
 				'title' => $title
+				,'slug' => $slug
 				,'id_category' => $id_category
 				,'summary' => $summary
 				,'body' => $body
@@ -72,6 +76,9 @@ public function __construct()
 		{			
 			$id = $this->input->post('id');
 			$title = $this->input->post('title');
+			$slug_input = str_replace(' ', '-',$title);
+			$slug_filter = preg_replace('/[^A-Za-z0-9\-]/', '',$slug_input);
+			$slug = strtolower($slug_filter);		
 			$id_category = $this->input->post('category');
 			$summary = $this->input->post('summary');
 			$body = $this->input->post('body');
@@ -93,6 +100,7 @@ public function __construct()
 			$update = $this->m_content->updateData(array(
 				'id' => $id
 				,'title' => $title
+				,'slug' => $slug
 				,'id_category' => $id_category
 				,'summary' => $summary
 				,'body' => $body

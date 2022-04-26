@@ -19,7 +19,8 @@
 						<?php echo form_open_multipart(base_url().'cms/content/add'); ?> 
 							<div class="form-group">
 								<label>Judul</label>
-								<input type="text" class="form-control" name="title" required>
+								<input type="text" class="form-control" id="title" name="title" required>
+								Karakter tersisa <b><span id="charsLeft"></span></b>
 							</div>
 							<div class="form-group">
 								<label>Kategori</label>
@@ -42,8 +43,11 @@
 							</div>
 							<div class="form-group">
 								<label>Konten</label>
-								<textarea class="form-control" name="body" required></textarea>
+								<textarea class="form-control" name="body" id="bodytextarea" required></textarea>
 							</div>
+							<script>
+								CKEDITOR.replace('bodytextarea');
+							</script>
 							<div class="form-group">
 								<label>Foto</label>
 								<input type="file" class="form-control" name="image" required>
@@ -51,13 +55,13 @@
 							<div class="form-group">
 								<label>Headline</label>
 								<div class="form-check">
-									<input class="form-check-input" type="radio" name="headline" id="headline1" value="1" checked>
+									<input class="form-check-input" type="radio" name="headline" id="headline1" value="1">
 									<label class="form-check-label" for="headline1">
 										Ya
 									</label>
 								</div>
 								<div class="form-check">
-									<input class="form-check-input" type="radio" name="headline" id="headline2" value="0">
+									<input class="form-check-input" type="radio" name="headline" id="headline2" value="0" checked>
 									<label class="form-check-label" for="headline2">
 										Tidak
 									</label>
@@ -66,13 +70,13 @@
 							<div class="form-group">
 								<label>Status</label>
 								<div class="form-check">
-									<input class="form-check-input" type="radio" name="status" id="status1" value="1" checked>
+									<input class="form-check-input" type="radio" name="status" id="status1" value="1">
 									<label class="form-check-label" for="status1">
 									Aktif
 									</label>
 								</div>
 								<div class="form-check">
-									<input class="form-check-input" type="radio" name="status" id="status2" value="0">
+									<input class="form-check-input" type="radio" name="status" id="status2" value="0" checked>
 									<label class="form-check-label" for="status2">
 										Tidak Aktif
 									</label>

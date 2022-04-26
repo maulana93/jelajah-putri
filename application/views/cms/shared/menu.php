@@ -4,4 +4,6 @@
     <a class="nav-link <?php if(isset($active_menu) && $active_menu=='3'){ echo 'active'; } ?>" href="<?php echo base_url().'cms/category'; ?>">Category</a>
     <a class="nav-link <?php if(isset($active_menu) && $active_menu=='4'){ echo 'active'; } ?>" href="<?php echo base_url().'cms/content'; ?>">Content</a>
     <a class="nav-link <?php if(isset($active_menu) && $active_menu=='5'){ echo 'active'; } ?>" href="<?php echo base_url().'cms/banner'; ?>">Banner</a>
+    <a class="nav-link <?php if(isset($active_menu) && $active_menu=='6'){ echo 'active'; } ?>" href="<?php echo base_url().'cms/image'; ?>">Image</a>
+    <a class="nav-link <?php if(isset($active_menu) && $active_menu=='7'){ echo 'active'; } ?>" href="<?php echo base_url().'cms/user'; ?>">User</a>
 </div>

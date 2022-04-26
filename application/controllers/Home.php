@@ -7,6 +7,7 @@ public function __construct()
 	parent::__construct();
 	//get query
 	$this->load->model(array('m_home'),'',TRUE);	
+	$this->load->helper(array('text_helper'),'',TRUE);	
 }
 	public function index()
 	{

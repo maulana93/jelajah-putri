@@ -24,10 +24,6 @@
 								<input type="text" class="form-control" name="title" value="<?php echo isset($lists[0]['title'])?$lists[0]['title']:''; ?>" required>
 							</div>
 							<div class="form-group">
-								<label>Slug</label>
-								<input type="text" class="form-control" name="slug" value="<?php echo isset($lists[0]['slug'])?$lists[0]['slug']:''; ?>" required>
-							</div>
-							<div class="form-group">
 								<label>Description</label>
 								<textarea class="form-control" name="description" required><?php echo isset($lists[0]['description'])?$lists[0]['description']:''; ?></textarea>
 							</div>

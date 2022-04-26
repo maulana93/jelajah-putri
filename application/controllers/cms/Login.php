@@ -20,15 +20,15 @@ public function __construct()
 			$data['email'] = "";
 			if(!empty($user))
 			{
-				foreach ($user as $row_user)
+				foreach ($user as $key => $value)
 				{
-					$password_2 = $row_user->password;
+					$password_2 = $value['password'];
 					
-					if ($password_2 == $password)
+					if ($password_2 == md5($password))
 					{
-						$id = $row_user -> id;
-						$fullname = $row_user -> fullname;
-						$email = $row_user -> email;							
+						$id = $value['id'];
+						$fullname = $value['fullname'];
+						$email = $value['email'];							
 						
 						$this->session->set_userdata('SESSION_ID', $id);
 						$this->session->set_userdata('SESSION_EMAIL', $email);

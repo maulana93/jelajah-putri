@@ -22,10 +22,6 @@
 								<input type="text" class="form-control" name="title" required>
 							</div>
 							<div class="form-group">
-								<label>Slug</label>
-								<input type="text" class="form-control" name="slug" required>
-							</div>
-							<div class="form-group">
 								<label>Description</label>
 								<textarea class="form-control" name="description" required></textarea>
 							</div>

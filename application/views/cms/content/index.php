@@ -33,16 +33,20 @@
 									if($value['status'] == 0){
 										$status = 'Tidak Aktif';
 									}
+									$headline = 'Ya';
+									if($value['is_headline'] == 0){
+										$status = 'Tidak';
+									}
 								?>
 								<tr>
 									<td><?php echo $no; ?></td>
 									<td><?php echo $value['title']; ?></td>
-									<td><?php echo $value['id_category']; ?></td>
-									<td><?php echo $value['is_headline']; ?></td>
+									<td><?php echo $value['category'][0]['title']; ?></td>
+									<td><?php echo $headline; ?></td>
 									<td><?php echo $status; ?></td>
 									<td>
 										<a class="btn btn-small btn-warning" href="<?php echo base_url().'cms/content/edit/'.$value['id']; ?>">Edit</a>
-										<a class="btn btn-warning" href="<?php echo base_url().'cms/content/delete/'.$value['id']; ?>">Hapus</a>
+										<a class="btn btn-danger" onClick="javascript: return confirm('Yakin ingin hapus data');" href="<?php echo base_url().'cms/content/delete/'.$value['id']; ?>">Hapus</a>
 									</td>
 								</tr> 
 								<?php

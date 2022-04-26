@@ -24,7 +24,9 @@ class Category extends CI_Controller {
 		if($this->input->post('simpan'))
 		{
 			$title = $this->input->post('title');
-			$slug = $this->input->post('slug');
+			$slug_input = str_replace(' ', '-',$title);
+			$slug_filter = preg_replace('/[^A-Za-z0-9\-]/', '',$slug_input);
+			$slug = strtolower($slug_filter);		
 			$description = $this->input->post('description');
 			$status = $this->input->post('status');
 
@@ -51,7 +53,9 @@ class Category extends CI_Controller {
 		{			
 			$id = $this->input->post('id');
 			$title = $this->input->post('title');
-			$slug = $this->input->post('slug');
+			$slug_input = str_replace(' ', '-',$title);
+			$slug_filter = preg_replace('/[^A-Za-z0-9\-]/', '',$slug_input);
+			$slug = strtolower($slug_filter);		
 			$description = $this->input->post('description');
 			$status = $this->input->post('status');
 
