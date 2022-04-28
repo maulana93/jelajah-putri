@@ -6,7 +6,7 @@ public function __construct()
 {
 	parent::__construct();
 	//get query
-	$this->load->model(array('m_kanal'),'',TRUE);
+	$this->load->model(array('m_kanal','m_banner'),'',TRUE);
 	$this->load->helper(array('text_helper'),'',TRUE);		
 }
 	public function index($slug = "")
@@ -18,6 +18,7 @@ public function __construct()
 		$title_category = isset($data['listsKanal'][0]['title'])?$data['listsKanal'][0]['title']:'';
 		$data['listsContent'] = $this->m_kanal->listContent(array('id_category'=>$id_category));
 		$data['title'] = 'Jelajah Putri - '.$title_category;
+		$data['banner'] = $this->m_banner->listData();
 		// echo "<pre>";var_dump($data['listsKanal']);exit();
 		$this->load->view('kanal',$data);
 	}

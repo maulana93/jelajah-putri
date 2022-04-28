@@ -20,12 +20,12 @@
 						<script>
 							$(document).ready(function() {
 								setTimeout(function() {
-									$("#alert-user").alert('close');
+									$("#alert").alert('close');
 								}, 2000);
 							});
 						</script>
 						<?php if(!empty($alert)){ ?>                            
-							<div class="alert alert-danger fade in show" id="alert-user" role="alert">
+							<div class="alert alert-danger fade in show" id="alert" role="alert">
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 							<?php echo $alert; ?>
 							</div>                       

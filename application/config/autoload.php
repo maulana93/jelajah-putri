@@ -97,7 +97,7 @@ $autoload['helper'] = array('url');
 | config files.  Otherwise, leave it blank.
 |
 */
-$autoload['config'] = array('my_config');
+$autoload['config'] = array('jelajahconfig');
 
 /*
 | -------------------------------------------------------------------

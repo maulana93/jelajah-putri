@@ -8,6 +8,10 @@ class Category extends CI_Controller {
 		//get query
 		$this->load->model(array('cms/m_user','cms/m_category'),'',TRUE);
 		$this->load->library(array('form_validation','session'));	
+
+		if(!$this->session->userdata('SESSION_ID')){
+			redirect(base_url().'login');
+		}
 	}
 	public function index()
 	{
@@ -30,17 +34,26 @@ class Category extends CI_Controller {
 			$description = $this->input->post('description');
 			$status = $this->input->post('status');
 
-			$insert = $this->m_category->insertData(array(
-				'title' => $title
-				,'slug' => $slug
-				,'description' => $description
-				,'status' => $status
-			));
-						
-			redirect(base_url().'cms/category');			
+			$data['title_category'] = $title;
+			$data['description'] = $description;
+			$data['status'] = $status;
+
+			$data['lists'] = $this->m_category->listdata(array('slug'=>$slug));
+			if(isset($data['lists']) && count($data['lists'])>0){
+				$data['alert'] = 'Kategori sudah ada, gunakan nama yang lain.';
+				$this->load->view('cms/category/add',$data);
+			} else {
+				$insert = $this->m_category->insertData(array(
+					'title' => $title
+					,'slug' => $slug
+					,'description' => $description
+					,'status' => $status
+				));
+							
+				redirect(base_url().'cms/category');
+			}						
 		}
 		else {
-			$data['cover'] = $this->m_category->listdata();
 			$this->load->view('cms/category/add',$data);
 		}		
 	}
@@ -59,18 +72,42 @@ class Category extends CI_Controller {
 			$description = $this->input->post('description');
 			$status = $this->input->post('status');
 
-			$update = $this->m_category->updateData(array(
-				'id' => $id
-				,'title'=>$title
-				,'slug' => $slug
-				,'description' => $description
-				,'status'=>$status
-			));
-						
-			redirect(base_url().'cms/category');					
+			$data['id'] = $id;
+			$data['title_category'] = $title;
+			$data['description'] = $description;
+			$data['status'] = $status;
+
+			$data['lists'] = $this->m_category->listdata(array('slug'=>$slug));
+			if(isset($data['lists']) && count($data['lists'])>0){
+				if($data['lists'][0]['id'] == $id){
+					$update = $this->m_category->updateData(array(
+						'id' => $id
+						,'title'=>$title
+						,'slug' => $slug
+						,'description' => $description
+						,'status'=>$status
+					));
+								
+					redirect(base_url().'cms/category');
+				} else {
+					$data['alert'] = 'Kategori sudah ada, gunakan nama yang lain.';
+					$this->load->view('cms/category/edit',$data);
+				}				
+			} else {
+				$update = $this->m_category->updateData(array(
+					'id' => $id
+					,'title'=>$title
+					,'slug' => $slug
+					,'description' => $description
+					,'status'=>$status
+				));
+							
+				redirect(base_url().'cms/category');
+			}				
 		}
 		else
 		{
+			$data['id'] = $id;	
 			$data['lists'] = $this->m_category->listData(array('id'=>$id));
 			// echo "<pre>";var_dump($data['lists']);exit();
 

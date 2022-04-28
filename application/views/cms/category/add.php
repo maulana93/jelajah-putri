@@ -17,24 +17,45 @@
 				<div class="row justify-content-center">
 					<div class="col-lg-8">
 						<?php echo form_open_multipart(base_url().'cms/category/add'); ?> 
+						<script>
+							$(document).ready(function() {
+								setTimeout(function() {
+									$("#alert").alert('close');
+								}, 2000);
+							});
+						</script>
+						<?php if(!empty($alert)){ ?>                            
+							<div class="alert alert-danger fade in show" id="alert" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<?php echo $alert; ?>
+							</div>                       
+						<?php } ?>
 							<div class="form-group">
 								<label>Judul</label>
-								<input type="text" class="form-control" name="title" required>
+								<input type="text" class="form-control" name="title" value="<?php echo isset($title_category)?$title_category:''; ?>" required>
 							</div>
 							<div class="form-group">
 								<label>Description</label>
-								<textarea class="form-control" name="description" required></textarea>
+								<textarea rows="7" class="form-control" name="description" required><?php echo isset($description)?$description:''; ?></textarea>
 							</div>
 							<div class="form-group">
 								<label>Status</label>
 								<div class="form-check">
-									<input class="form-check-input" type="radio" name="status" id="status1" value="1" checked>
+									<input class="form-check-input" type="radio" name="status" id="status1" value="1" <?php
+									if(isset($status) && $status==1){
+										echo 'checked';
+									}
+									?>>
 									<label class="form-check-label" for="status1">
 									Aktif
 									</label>
 								</div>
 								<div class="form-check">
-									<input class="form-check-input" type="radio" name="status" id="status2" value="0">
+									<input class="form-check-input" type="radio" name="status" id="status2" value="0" <?php
+									if(isset($status) && $status==0){
+										echo 'checked';
+									}
+									?>>
 									<label class="form-check-label" for="status2">
 										Tidak Aktif
 									</label>

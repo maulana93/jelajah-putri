@@ -22,7 +22,7 @@ Class M_user extends CI_Model
 			$conditional .= "AND email = '".$this->db->escape_str($email)."'";
 		}
 
-		$mysql = "select * from user ".$conditional."";
+		$mysql = "select * from user ".$conditional." order by id DESC";
 		$q = $this->db->query($mysql);
 		$result = $q->result_array();
 		return $result;

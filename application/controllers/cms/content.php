@@ -8,6 +8,10 @@ public function __construct()
 	//get query
 	$this->load->model(array('cms/m_user','cms/m_content','cms/m_category'),'',TRUE);
 	$this->load->library(array('form_validation','encrypt','session'));	
+
+	if(!$this->session->userdata('SESSION_ID')){
+		redirect(base_url().'login');
+	}
 }
 	public function index()
 	{
@@ -35,11 +39,11 @@ public function __construct()
 			$datecreated = date("Y-m-d H:i:s");
 			$image = $_FILES["image"]["name"];
 			$status = $this->input->post('status');
-			$title_image = md5($title);
 
+			$title_image = md5($title);
 			$path = 'assets/images/articles';
 			$ext = pathinfo($image, PATHINFO_EXTENSION);
-			$file_name = date("Y-m-d-H-i-s").$title_image.'-'.'.'.$ext;
+			$file_name = date("Y-m-d-H-i-s").$title_image.'.'.$ext;
 			$path_image = $path.'/'.$file_name;
 
 			$insert = $this->m_content->insertData(array(
@@ -81,16 +85,16 @@ public function __construct()
 			$slug = strtolower($slug_filter);		
 			$id_category = $this->input->post('category');
 			$summary = $this->input->post('summary');
+			$image = $_FILES["image"]["name"];
 			$body = $this->input->post('body');
 			$id_user = $this->session->userdata('SESSION_ID');
 			$is_headline = $this->input->post('headline');
 			$status = $this->input->post('status');
-			$title_image = md5($title);
 
-			$image = $_FILES["image"]["name"];
+			$title_image = md5($title);
 			$path = 'assets/images/articles';
 			$ext = pathinfo($image, PATHINFO_EXTENSION);
-			$file_name = date("Y-m-d-H-i-s").$title_image.'-'.'.'.$ext;
+			$file_name = date("Y-m-d-H-i-s").$title_image.'.'.$ext;
 			$path_image = $path.'/'.$file_name;
 
 			if($image == ''){

@@ -13,7 +13,7 @@
 						<a class="btn btn-primary" href="<?php echo base_url().'cms/content/add'; ?>">Tambah Data</a>
 					</div>
 				</div>
-				<table class="table table-bordered"> 
+				<table class="table table-bordered" id="myDataTables"> 
 					<thead> 
 						<tr> 
 							<th>No</th>
@@ -56,7 +56,7 @@
 							else {
 								?>
 								<tr>
-									<td colspan="5">Tidak Ada Data</td>
+									<td colspan="6">Tidak Ada Data</td>
 								</tr> 
 								<?php
 							}

@@ -8,6 +8,10 @@ public function __construct()
 	//get query
 	$this->load->model(array('cms/m_user','cms/m_banner'),'',TRUE);
 	$this->load->library(array('form_validation','session'));	
+
+	if(!$this->session->userdata('SESSION_ID')){
+		redirect(base_url().'login');
+	}
 }
 	public function index()
 	{
@@ -27,9 +31,11 @@ public function __construct()
 			$url = $this->input->post('url');
 			$image = $_FILES["image"]["name"];
 			$status = $this->input->post('status');
+
+			$title_image = md5($title);
 			$path = 'assets/images/banner';
 			$ext = pathinfo($image, PATHINFO_EXTENSION);
-			$file_name = str_replace(' ','-',$title).'-'.date("Y-m-d-H-i-s").'.'.$ext;
+			$file_name = date("Y-m-d-H-i-s").$title_image.'.'.$ext;
 			$path_image = $path.'/'.$file_name;
 
 			$insert = $this->m_banner->insertData(array(
@@ -60,10 +66,12 @@ public function __construct()
 			$id = $this->input->post('id');
 			$title = $this->input->post('title');
 			$url = $this->input->post('url');
-			$new_image = $_FILES["image"]["name"];
+			$new_image = $_FILES["image"]["name"];			
+
+			$title_image = md5($title);
 			$path = 'assets/images/banner';
-			$ext = pathinfo($new_image, PATHINFO_EXTENSION);
-			$file_name = str_replace(' ','-',$title).'-'.date("Y-m-d-H-i-s").'.'.$ext;
+			$ext = pathinfo($image, PATHINFO_EXTENSION);
+			$file_name = date("Y-m-d-H-i-s").$title_image.'.'.$ext;
 			$path_image = $path.'/'.$file_name;
 
 			if($new_image == ''){

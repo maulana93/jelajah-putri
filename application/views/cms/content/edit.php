@@ -21,7 +21,7 @@
 							<input type="hidden" class="form-control" name="id" value="<?php echo isset($lists[0]['id'])?$lists[0]['id']:''; ?>" required> 
 							<div class="form-group">
 								<label>Judul</label>
-								<input type="text" class="form-control" name="title" value="<?php echo isset($lists[0]['title'])?$lists[0]['title']:''; ?>" required>
+								<input type="text" class="form-control" name="title" maxlength="50" value="<?php echo isset($lists[0]['title'])?$lists[0]['title']:''; ?>" required>
 							</div>
 							<div class="form-group">
 								<label>Kategori</label>
@@ -41,7 +41,7 @@
 							</div>
 							<div class="form-group">
 								<label>Ringkasan</label>
-								<textarea class="form-control" name="summary" required><?php echo isset($lists[0]['summary'])?$lists[0]['summary']:''; ?></textarea>
+								<textarea class="form-control" name="summary" rows="7" maxlength="175" required><?php echo isset($lists[0]['summary'])?$lists[0]['summary']:''; ?></textarea>
 							</div>
 							<div class="form-group">
 								<label>Konten</label>

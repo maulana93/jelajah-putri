@@ -49,6 +49,16 @@ Class M_home extends CI_Model
 		return $result;
 	}
 
+	public function listBanner()
+	{
+		$mysql = "
+			SELECT * FROM banner WHERE status = 1
+		";
+		$q = $this->db->query($mysql);
+		$result = $q->result_array();
+		return $result;
+	}
+
 	private function __getContent($result){
 		if (count($result) > 0) {
 			foreach ($result as $key => $value) {

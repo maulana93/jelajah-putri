@@ -7,7 +7,11 @@ class User extends CI_Controller {
 		parent::__construct();
 		//get query
 		$this->load->model(array('cms/m_user'),'',TRUE);
-		$this->load->library(array('form_validation','session'));	
+		$this->load->library(array('form_validation','session'));
+
+		if(!$this->session->userdata('SESSION_ID')){
+			redirect(base_url().'login');
+		}	
 	}
 	public function index()
 	{

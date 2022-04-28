@@ -1,5 +1,15 @@
-<div class="sidebar">
-    <img src="<?php echo base_url().'assets/images/sample/Group 3.png'; ?>" class="img-fluid">
+<div class="sidebar">    
+    <?php
+    if(isset($banner) && count($banner)>0){ 
+        foreach($banner as $key => $value){ 
+            ?>
+            <a href="<?php echo $value['url']; ?>">
+                <img src="<?php echo base_url().$value['image']; ?>" class="mb-3 img-fluid">
+            </a>
+            <?php
+        }
+    }
+    ?>
     <div class="d-flex justify-content-between">
         <h4>FOLLOW US</H4>
         <P>@jelajahputri</p>

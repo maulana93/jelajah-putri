@@ -11,7 +11,7 @@ Class M_image extends CI_Model
 			$conditional .= "AND id = '".$this->db->escape_str($id)."'";
 		}
 
-		$mysql = "select * from image ".$conditional."";
+		$mysql = "select * from image ".$conditional." order by id DESC";
 		$q = $this->db->query($mysql);
 		$result = $q->result_array();
 		return $result;

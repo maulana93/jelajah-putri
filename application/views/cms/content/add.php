@@ -19,8 +19,7 @@
 						<?php echo form_open_multipart(base_url().'cms/content/add'); ?> 
 							<div class="form-group">
 								<label>Judul</label>
-								<input type="text" class="form-control" id="title" name="title" required>
-								Karakter tersisa <b><span id="charsLeft"></span></b>
+								<input type="text" class="form-control" id="title" name="title" maxlength="50" required>
 							</div>
 							<div class="form-group">
 								<label>Kategori</label>
@@ -39,7 +38,7 @@
 							</div>
 							<div class="form-group">
 								<label>Ringkasan</label>
-								<textarea class="form-control" name="summary" required></textarea>
+								<textarea class="form-control" name="summary" rows="7" maxlength="175" required></textarea>
 							</div>
 							<div class="form-group">
 								<label>Konten</label>

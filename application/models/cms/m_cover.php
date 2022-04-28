@@ -19,7 +19,7 @@ Class M_cover extends CI_Model
 			$conditional .= "limit 0,".$this->db->escape_str($limit)."";
 		}
 
-		$mysql = "select * from cover ".$conditional."";
+		$mysql = "select * from cover ".$conditional." order by id DESC";
 		$q = $this->db->query($mysql);
 		$result = $q->result_array();
 		return $result;

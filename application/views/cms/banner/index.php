@@ -52,7 +52,7 @@
 							else {
 								?>
 								<tr>
-									<td colspan="5">Tidak Ada Data</td>
+									<td colspan="6">Tidak Ada Data</td>
 								</tr> 
 								<?php
 							}

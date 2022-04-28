@@ -4,14 +4,18 @@ Class M_category extends CI_Model
 	public function listdata($params=array())
 	{
 		$id = isset($params["id"])?$params["id"]:'';
+		$slug = isset($params["slug"])?$params["slug"]:'';
 
 		$conditional = " WHERE 1=1 ";
 
 		if($id != '') {
 			$conditional .= "AND id = '".$this->db->escape_str($id)."'";
 		}
+		if($slug != '') {
+			$conditional .= "AND slug = '".$this->db->escape_str($slug)."'";
+		}
 
-		$mysql = "select * from category ".$conditional."";
+		$mysql = "select * from category ".$conditional." order by id DESC";
 		$q = $this->db->query($mysql);
 		$result = $q->result_array();
 		return $result;

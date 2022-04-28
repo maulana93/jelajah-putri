@@ -11,7 +11,7 @@ Class M_content extends CI_Model
 			$conditional .= "AND id = '".$this->db->escape_str($id)."'";
 		}
 
-		$mysql = "select * from content ".$conditional."";
+		$mysql = "select * from content ".$conditional." order by id DESC";
 		$q = $this->db->query($mysql);
 		$result = $q->result_array();
 		$result = $this->__getCategory($result);

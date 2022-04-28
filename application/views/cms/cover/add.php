@@ -23,7 +23,7 @@
 							</div>
 							<div class="form-group">
 								<label>Ringkasan</label>
-								<textarea class="form-control" name="summary" required></textarea>
+								<textarea rows="7" class="form-control" name="summary" required></textarea>
 							</div>
 							<div class="form-group">
 								<label>Foto</label>

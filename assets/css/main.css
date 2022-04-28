@@ -37,7 +37,7 @@ p{
     width: 30%;
     position: absolute;
     right: unset;
-    top: 300px;
+    top: 250px;
     left: 9%;
     z-index: 10;
     padding-top: 20px;
@@ -359,4 +359,13 @@ h1.title-page{
     -webkit-transform: scale(1.1);
 	transform: scale(1.1);
     transition: 1s;
+}
+.carousel-inner{
+    height: 700px;
+}
+.article--opini img{
+    object-fit: cover;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
 }

@@ -17,31 +17,52 @@
 				<div class="row justify-content-center">
 					<div class="col-lg-8">
 						<?php echo form_open_multipart(base_url().'cms/category/edit'); ?>
-							<input type="hidden" class="form-control" name="id" value="<?php echo isset($lists[0]['id'])?$lists[0]['id']:''; ?>" required> 
+						<script>
+							$(document).ready(function() {
+								setTimeout(function() {
+									$("#alert").alert('close');
+								}, 2000);
+							});
+						</script>
+						<?php if(!empty($alert)){ ?>                            
+							<div class="alert alert-danger fade in show" id="alert" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<?php echo $alert; ?>
+							</div>                       
+						<?php } ?>
+						<input type="hidden" class="form-control" name="id" value="<?php echo isset($id)?$id:''; ?>" readonly> 
+						<?php						
+						if(isset($lists) && count($lists)>0){
+							foreach ($lists as $key => $value){
+								?>
 
-							<div class="form-group">
-								<label>Judul</label>
-								<input type="text" class="form-control" name="title" value="<?php echo isset($lists[0]['title'])?$lists[0]['title']:''; ?>" required>
-							</div>
-							<div class="form-group">
-								<label>Description</label>
-								<textarea class="form-control" name="description" required><?php echo isset($lists[0]['description'])?$lists[0]['description']:''; ?></textarea>
-							</div>
-							<div class="form-group">
-								<label>Status</label>
-								<div class="form-check">
-									<input class="form-check-input" type="radio" name="status" id="status1" value="1" <?php if(isset($lists[0]['status']) && $lists[0]['status'] == 1) { echo 'checked'; } ?>>
-									<label class="form-check-label" for="status1">
-									Aktif
-									</label>
+								<div class="form-group">
+									<label>Judul</label>
+									<input type="text" class="form-control" name="title" value="<?php echo isset($value['title'])?$value['title']:''; ?>" required>
 								</div>
-								<div class="form-check">
-									<input class="form-check-input" type="radio" name="status" id="status2" value="0" <?php if(isset($lists[0]['status']) && $lists[0]['status'] == 0) { echo 'checked'; } ?>>
-									<label class="form-check-label" for="status2">
-										Tidak Aktif
-									</label>
+								<div class="form-group">
+									<label>Description</label>
+									<textarea class="form-control" name="description" required><?php echo isset($value['description'])?$value['description']:''; ?></textarea>
 								</div>
-							</div>
+								<div class="form-group">
+									<label>Status</label>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="status" id="status1" value="1" <?php if(isset($value['status']) && $value['status'] == 1) { echo 'checked'; } ?>>
+										<label class="form-check-label" for="status1">
+										Aktif
+										</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="status" id="status2" value="0" <?php if(isset($value['status']) && $value['status'] == 0) { echo 'checked'; } ?>>
+										<label class="form-check-label" for="status2">
+											Tidak Aktif
+										</label>
+									</div>
+								</div>
+								<?php
+							}
+						}
+						?>
 							<div class="form-group">
 								<input type="submit" name="simpan" value="Simpan" class="btn btn-danger">
 							</div>

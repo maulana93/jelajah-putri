@@ -8,6 +8,10 @@ public function __construct()
 	//get query
 	$this->load->model(array('cms/m_user'),'',TRUE);
 	$this->load->library(array('session'));	
+
+	if(!$this->session->userdata('SESSION_ID')){
+		redirect(base_url().'login');
+	}
 }
 	public function index()
 	{
