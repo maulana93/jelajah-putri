@@ -16,25 +16,17 @@ public function __construct()
 
 		$id_category = isset($data['listsKanal'][0]['id'])?$data['listsKanal'][0]['id']:'';
 		$title_category = isset($data['listsKanal'][0]['title'])?$data['listsKanal'][0]['title']:'';
-		$data['listsContent'] = $this->m_kanal->listContent(array('id_category'=>$id_category));
+		$data['listsContent'] = $this->m_kanal->listContent(array('id_category'=>$id_category,'limit'=>13));
+
 		$data['title'] = 'Jelajah Putri - '.$title_category;
 		$data['banner'] = $this->m_banner->listData();
-		// echo "<pre>";var_dump($data['listsKanal']);exit();
 		$this->load->view('kanal',$data);
 	}
 	function getAllDataNext(){
-		$tdata = array();
-		$id_kanal = htmlspecialchars($this->input->post('id_kanal'));
-		$current_value = htmlspecialchars($this->input->post('current_value'));
-		$array_exclude = htmlspecialchars($this->input->post('array_exclude'));
-		$arr_exclude =  isset($array_exclude)?explode(",", $array_exclude):array();
+		$last_id = $this->input->post('last_id');
+		$id_category = $this->input->post('id_category');
 
-		$tdata['listartikelkanal'] = $this->ContentModel->listArticlev3(array('id_kanal'=>$this->webconfig['kanal-id-berita'],'slug'=>$tdata['slugkanal'],'limit'=>$this->webconfig['limit_artikel_kanal_berita'],'last_artikel'=>$current_value,'arr_exclude'=>$arr_exclude));
-		$arr_exclude= array();
-		foreach ($tdata['listartikelkanal'] as $key => $value) {
-			$arr_exclude[] = $value['id'];
-		}
-		$tdata['array_exclude2'] = implode(",", $arr_exclude);
-		$this->load->view($this->router->class.'/kanalnext',$tdata);
+		$data['listsContent'] = $this->m_kanal->listContent(array('id_category'=>$id_category,'last_id'=>$last_id,'limit'=>10));
+		$this->load->view('kanalnext',$data);
 	}
 }

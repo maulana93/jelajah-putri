@@ -21,7 +21,7 @@
                                 <img src="<?php echo base_url().$value['headline'][0]['image']; ?>" class="d-block w-100">
                                 <div class="carousel-caption carousel-caption--headline d-none d-md-block">
                                     <div class="category"><?php echo $value['title'] ?></div>
-                                    <h2><?php echo $value['headline'][0]['title']; ?></h2>
+                                    <h2><a href="<?php echo url_format($value['headline'][0]); ?>"><?php echo $value['headline'][0]['title']; ?></a></h2>
                                     <p><?php echo $value['headline'][0]['summary']; ?></p>
                                 </div>
                             </div>

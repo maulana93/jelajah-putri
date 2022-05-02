@@ -23,23 +23,28 @@
                         foreach($detail as $key => $value){                         
                         ?>
                         <h1><?php echo $value['title']; ?></h1>
+                        <p><?php echo $value['summary']; ?></p>
                         <div class="detail-info d-flex justify-content-between my-4">
                             <div class="detail-info">
                                 <p><?php echo $value['penulis'][0]['fullname']; ?></p>
                                 <span><?php echo date("j F Y", strtotime( $value['datecreated'])); ?></span>
                             </div>
                             <div class="detail-share">
-                                <a href=""><img class="img-fluid" src="<?php echo base_url().'assets/images/logo-twitter.png'; ?>"></a>
-                                <a href=""><img class="img-fluid" src="<?php echo base_url().'assets/images/logo-fb.png'; ?>"></a>
-                                <a href=""><img class="img-fluid" src="<?php echo base_url().'assets/images/logo-linkedin.png'; ?>"></a>
+                                <a href="https://twitter.com/intent/tweet?text=<?php echo $value['title']; ?>+<?php echo base_url().$_SERVER['REQUEST_URI']; ?>+via%20@KATADATAcoid%20%E2%80%8F<?php echo base_url().$_SERVER['REQUEST_URI']; ?>"><img class="img-fluid" src="<?php echo base_url().'assets/images/logo-twitter.png'; ?>"></a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo base_url().$_SERVER['REQUEST_URI']; ?>"><img class="img-fluid" src="<?php echo base_url().'assets/images/logo-fb.png'; ?>"></a>
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&title=<?php echo $value['title']; ?>&url=<?php echo base_url().$_SERVER['REQUEST_URI']; ?>"><img class="img-fluid" src="<?php echo base_url().'assets/images/logo-linkedin.png'; ?>"></a>
                             </div>
                         </div>
                         <img class="img-fluid" src="<?php echo base_url().$value['image']; ?>">
                         <div class="row">
                             <div class="col-lg-3"></div>
                             <div class="col-lg-9">
-                                <div class="detail-body">
+                                <div class="detail-body mt-5">
                                     <?php echo $value['body']; ?>
+                                    <div id="fb-root"></div>
+                                    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v13.0" nonce="GrNiXRdp"></script>
+
+                                    <div class="fb-comments" data-href="<?php echo base_url().$_SERVER['REQUEST_URI']; ?>" data-width="" data-numposts="5"></div>
                                 </div>
                             </div>
                         </div>
