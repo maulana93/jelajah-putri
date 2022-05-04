@@ -5,8 +5,10 @@
     position: fixed;
 }
 .content{
-    margin-left: 225px;
+    margin-left: 240px;
     padding-top: 60px;
+    width: 82% !important;
+    position: absolute;
 }
 .menu-bar a.nav-link{
     color: #e2e4f6;
@@ -21,4 +23,10 @@
 .dropdown-menu{
     left: unset;
     right: 0;
+}
+.form-group span {
+    right: 15px;
+    z-index: 1;
+    position: absolute;
+    color: rgb(0 0 0 / 50%);
 }

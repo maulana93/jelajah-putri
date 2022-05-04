@@ -22,6 +22,17 @@
 							<div class="form-group">
 								<label>Judul</label>
 								<input type="text" class="form-control" name="title" maxlength="50" value="<?php echo isset($lists[0]['title'])?$lists[0]['title']:''; ?>" required>
+    							<span class="counter"></span>
+								<script>
+									let input = document.querySelector('.form-group input')
+										counter = document.querySelector('.counter')
+										maxLength = input.getAttribute('maxlength')
+										counter.innerHTML = `${maxLength}/${maxLength}`
+
+										input.addEventListener('keyup', (e) => {
+											counter.innerHTML = `${parseFloat(maxLength) - e.target.value.length}/${maxLength}`
+										})
+								</script>
 							</div>
 							<div class="form-group">
 								<label>Kategori</label>

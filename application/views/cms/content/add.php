@@ -20,6 +20,17 @@
 							<div class="form-group">
 								<label>Judul</label>
 								<input type="text" class="form-control" id="title" name="title" maxlength="50" required>
+    							<span class="counter"></span>
+								<script>
+									let input = document.querySelector('.form-group input')
+										counter = document.querySelector('.counter')
+										maxLength = input.getAttribute('maxlength')
+										counter.innerHTML = `${maxLength}/${maxLength}`
+
+										input.addEventListener('keyup', (e) => {
+											counter.innerHTML = `${parseFloat(maxLength) - e.target.value.length}/${maxLength}`
+										})
+								</script>
 							</div>
 							<div class="form-group">
 								<label>Kategori</label>

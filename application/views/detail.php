@@ -5,7 +5,7 @@
         foreach($detail as $key => $value){                            
         ?>
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
+            <ol class="breadcrumb mt-3">
                 <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>"><i class="bi bi-house-door"></i></a></li>
                 <li class="breadcrumb-item"><a href="<?php echo base_url().$value['category'][0]['slug']; ?>"><?php echo $value['category'][0]['title']; ?></a></li>
                 <li class="breadcrumb-item active" aria-current="page"><?php echo $value['title']; ?></li>
