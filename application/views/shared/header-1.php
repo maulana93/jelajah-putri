@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto ml-5">
+                    <ul class="navbar-nav mr-auto ml-xs-0 ml-5">
                         <li class="nav-item <?php if(isset($menu_active) && $menu_active == 'home'){ echo 'active'; } ?>">
                             <a class="nav-link" href="<?php echo base_url(); ?>">Home</a>
                         </li>

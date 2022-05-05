@@ -1,10 +1,10 @@
-<div class="sidebar">    
+<div class="sidebar mb-5">    
     <?php
     if(isset($banner) && count($banner)>0){ 
         foreach($banner as $key => $value){ 
             ?>
             <a href="<?php echo $value['url']; ?>">
-                <img src="<?php echo base_url().$value['image']; ?>" class="mb-3 img-fluid">
+                <img src="<?php echo base_url().$value['image']; ?>" class="img-banner mb-3 img-fluid">
             </a>
             <?php
         }

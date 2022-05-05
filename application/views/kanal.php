@@ -1,6 +1,6 @@
 <?php $this->load->view('shared/header-2'); ?>
     <div class="container">
-        <div class="title-kanal d-flex mt-5">     
+        <div class="title-kanal d-block d-sm-flex mt-5">     
             <?php 
             if (isset($listsKanal) && count($listsKanal)>0) { 
                 foreach($listsKanal as $key=>$value) { 

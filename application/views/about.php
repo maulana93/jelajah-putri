@@ -1,6 +1,6 @@
 <?php $this->load->view('shared/header-2'); ?>
     <div class="container">
-        <div class="row mt-5">
+        <div class="row pt-5">
             <div class="col-lg-9">
                 <h1 class="title-page">TENTANG KAMI</h1>
                 <img class="img-fluid" src="<?php echo base_url().'assets/images/bg-about.png'; ?>">

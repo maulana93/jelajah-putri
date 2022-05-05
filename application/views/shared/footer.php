@@ -1,15 +1,15 @@
         <div class="footer">
             <div class="container">
-                <div class="d-flex justify-content-between">
+                <div class="d-block d-sm-flex justify-content-between">
                     <ul class="nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="<?php echo base_url(); ?>">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="<?php echo base_url().'about'; ?>">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Hubungi kami</a>
+                            <a class="nav-link" href="<?php echo base_url().'kontak'; ?>">Hubungi kami</a>
                         </li>
                     </ul>
                     <p>Copyright © 2022 Jelajah Putri</p>

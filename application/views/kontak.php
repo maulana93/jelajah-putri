@@ -7,7 +7,7 @@
     });
 </script>
     <div class="container">
-        <div class="row mt-5">
+        <div class="row pt-5">
             <div class="col-lg-9">
                 <h1 class="title-page">HUBUNGI KAMI</h1>
                 <?php if(!empty($alert)){ ?>                            

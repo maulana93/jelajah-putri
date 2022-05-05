@@ -315,6 +315,12 @@ h1.title-page{
     color: #111111;
 }
 .news-detail p{
+    font-family: 'Barlow';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: -0.01em;
     color: #666666;
 
 }
@@ -395,4 +401,73 @@ img.reguler-opini{
 .alert-contactus{
     position: absolute;
     left: 50%;
+}
+@media screen and (max-width: 425px) {
+    .navbar{
+        background: #767676;
+    }
+    .navbar-brand img{
+        width: 100px;
+    }
+    .carousel{
+        padding-top: 67px;
+    }
+    .carousel-inner{
+        height:220px;
+    }
+    .carousel-caption{
+        top: 90px;
+        z-index: 1;
+    }
+    .carousel-caption h2, .carousel-caption h2 a{
+        font-size: 26px;
+        line-height: 28px;
+    }
+    .carousel-caption--headline{
+        width: 80%;
+    }
+    .carousel-caption--headline h2{
+        padding: 15px;
+    }
+    .navbar-collapse{
+        margin-top: 0;
+    }
+    .navbar-light .navbar-toggler-icon{
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    .navbar-collapse .ml-5{
+        margin-left: 0 !important;
+    }
+    .footer p{
+        margin-left: 15px;
+    }
+    .navbar--page{
+        position: absolute;
+        z-index: 2;
+    }
+    .container .pt-5{
+        padding-top: 120px !important;
+    }
+    .title-kanal{
+        margin-top: 0 !important;
+        padding-top: 120px;
+    }
+    .title-kanal p{
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 10px 0 0 0px;
+    }
+    .img-banner{
+        width: 75%;
+        height: auto;
+        display: block;
+        margin: auto;
+    }
+    .sidebar{
+        margin-top: 20px;
+    }
+    .breadcrumb.mt-3{
+        margin-top: 0 !important;
+        padding-top: 120px;
+    }
 }

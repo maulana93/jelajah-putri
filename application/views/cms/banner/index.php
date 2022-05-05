@@ -13,7 +13,7 @@
 						<a class="btn btn-primary" href="<?php echo base_url().'cms/banner/add'; ?>">Tambah Data</a>
 					</div>
 				</div>
-				<table class="table table-bordered"> 
+				<table class="table table-bordered" id="myDataTables"> 
 					<thead> 
 						<tr> 
 							<th>No</th>

@@ -1,6 +1,6 @@
 <?php $this->load->view('shared/header-2'); ?>
     <div class="container">
-        <div class="row mt-5">
+        <div class="row pt-5">
             <div class="col-lg-9">
                 <?php 
                     if (isset($listsSearch)) { 
