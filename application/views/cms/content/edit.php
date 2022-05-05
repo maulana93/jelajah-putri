@@ -56,10 +56,7 @@
 							</div>
 							<div class="form-group">
 								<label>Konten</label>
-								<textarea class="form-control" name="body" id="bodytextarea" required><?php echo isset($lists[0]['body'])?$lists[0]['body']:''; ?></textarea>
-								<script>
-									CKEDITOR.replace('bodytextarea');
-								</script>
+								<textarea class="form-control" name="body" id="mytextarea" required><?php echo isset($lists[0]['body'])?$lists[0]['body']:''; ?></textarea>
 							</div>
 							<div class="form-group">
 								<label>Foto</label><br>

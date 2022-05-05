@@ -79,12 +79,24 @@ public function __construct()
 
 			// Send email
 			if(!$mail->send()){
-				echo 'Message could not be sent.';
-				echo 'Mailer Error: ' . $mail->ErrorInfo;
+				// echo 'Message could not be sent.';
+            	// echo 'Mailer Error: ' . $mail->ErrorInfo;
+				$alert="Pesan tidak terkirim, coba ulangi beberapa saat lagi.";
+				$data['alert'] = $alert;
+				$data['alert_type'] = 'alert-danger';
+				$data['name'] = $name;
+				$data['email'] = $email;
+				$data['messages'] = $messages;
 			}else{
-				echo 'Message has been sent';
+				$alert="Pesan telah terkirim";
+				$data['alert'] = $alert;
+				$data['alert_type'] = 'alert-success';
+				$data['name'] = "";
+				$data['email'] = "";
+				$data['messages'] = "";
 			}
 			
+			$this->load->view('kontak',$data);
 		}
     }
 }

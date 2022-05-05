@@ -13,6 +13,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <link href="<?php echo base_url(); ?>assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
         <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.js"></script>
+		<script>                            
+			jQuery(document).ready(function($) {
+				$(".alert").fadeTo(2000, 500).slideUp(500, function(){
+					$(".alert").slideUp(500);
+				});
+			});
+		</script>
     </head>
     <body>
 
@@ -26,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<?php echo form_open(base_url().'cms/login'); ?>  					
 									<?php if(!empty($alert)){ ?>                            
 										<div class="alert alert-danger fade in show" role="alert">
-										<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
 										<?php echo $alert; ?>
 										</div>                       
 									<?php } ?>

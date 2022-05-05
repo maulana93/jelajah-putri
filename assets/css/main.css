@@ -392,3 +392,7 @@ img.reguler-opini{
     display: block;
     margin: auto;
 }
+.alert-contactus{
+    position: absolute;
+    left: 50%;
+}

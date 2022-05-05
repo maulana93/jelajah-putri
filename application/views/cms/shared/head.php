@@ -13,8 +13,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <link href="<?php echo base_url(); ?>assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/cms/datatables/datatables.min.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
-        <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.js"></script>
-        <script src="<?php echo base_url(); ?>assets/cms/ckeditor/ckeditor.js"></script>
+        <script src="https://cdn.tiny.cloud/1/org4wngryaz3jwzm5lkxnq4d6346c7ggqdlrz6i93r9jros7/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.js"></script><script>
+            tinymce.init({
+            selector: '#mytextarea',
+            plugins: 'a11ychecker advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+            toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter pageembed permanentpen table',
+            toolbar_mode: 'floating',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+            height: 400,
+            });
+        </script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
