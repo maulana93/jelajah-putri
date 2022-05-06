@@ -3,12 +3,10 @@
     background: #4f5061;
     padding-top: 60px;
     position: fixed;
+    width: 220px;
 }
 .content{
-    margin-left: 240px;
     padding-top: 60px;
-    width: 82% !important;
-    position: absolute;
 }
 .menu-bar a.nav-link{
     color: #e2e4f6;

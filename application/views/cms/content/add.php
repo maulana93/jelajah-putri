@@ -25,10 +25,10 @@
 									let input = document.querySelector('.form-group input')
 										counter = document.querySelector('.counter')
 										maxLength = input.getAttribute('maxlength')
-										counter.innerHTML = `${maxLength}/${maxLength}`
+										counter.innerHTML = `Sisa karakter ${maxLength}`
 
 										input.addEventListener('keyup', (e) => {
-											counter.innerHTML = `${parseFloat(maxLength) - e.target.value.length}/${maxLength}`
+											counter.innerHTML = `Sisa karakter ${parseFloat(maxLength) - e.target.value.length}`
 										})
 								</script>
 							</div>
