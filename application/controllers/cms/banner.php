@@ -70,7 +70,7 @@ public function __construct()
 
 			$title_image = md5($title);
 			$path = 'assets/images/banner';
-			$ext = pathinfo($image, PATHINFO_EXTENSION);
+			$ext = pathinfo($new_image, PATHINFO_EXTENSION);
 			$file_name = date("Y-m-d-H-i-s").$title_image.'.'.$ext;
 			$path_image = $path.'/'.$file_name;
 

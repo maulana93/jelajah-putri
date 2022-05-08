@@ -55,7 +55,7 @@
 									<textarea class="form-control" name="summary" rows="7" maxlength="175" required></textarea>
 								</div><div class="form-group">
 									<label>Konten</label>
-									<textarea class="form-control" name="body" id="mytextarea" required></textarea>
+									<textarea class="form-control" name="body" id="mytextarea"></textarea>
 								</div>
 								<div class="form-group">
 									<label>Foto</label>

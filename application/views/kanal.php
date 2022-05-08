@@ -30,7 +30,7 @@
                                         }
                                     ?>
                                     <a href="<?php echo url_format($value); ?>">
-                                        <img width="300" src="<?php echo base_url().isset($value['image'])?$value['image']:''; ?>" class="img-fluid mb-2<?php echo $big_opini; ?>">
+                                        <img src="<?php echo base_url().isset($value['image'])?$value['image']:''; ?>" class="big-img img-fluid mb-2<?php echo $big_opini; ?>">
                                         <h2 class="main-headline-title"><?php echo isset($value['title'])?$value['title']:''; ?></h2>
                                         <p><?php echo isset($value['summary'])?$value['summary']:''; ?></p>
                                     </a>
