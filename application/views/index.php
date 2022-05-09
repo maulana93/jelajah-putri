@@ -9,7 +9,7 @@
                         <img src="<?php echo base_url().$value['image']; ?>" class="d-block w-100">
                         <div class="carousel-caption">
                             <h2><?php echo $value['title'] ?></h2>
-                            <p class="d-none d-sm-block"><?php echo $value['summary'] ?></p>
+                            <p><?php echo $value['summary'] ?></p>
                         </div>
                     </div>
                     <?php
@@ -22,7 +22,7 @@
                                 <div class="carousel-caption carousel-caption--headline">
                                     <div class="category"><?php echo $value['title'] ?></div>
                                     <h2><a href="<?php echo url_format($value['headline'][0]); ?>"><?php echo $value['headline'][0]['title']; ?></a></h2>
-                                    <p class="d-none d-sm-block"><?php echo $value['headline'][0]['summary']; ?></p>
+                                    <p><?php echo $value['headline'][0]['summary']; ?></p>
                                 </div>
                             </div>
                             <?php

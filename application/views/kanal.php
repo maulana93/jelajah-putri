@@ -55,7 +55,7 @@
                                     ?>  
                                     <a href="<?php echo url_format($value); ?>">
                                         <img src="<?php echo base_url().$value['image']; ?>" class="img-fluid mb-2<?php echo $reguler_opini; ?>">
-                                        <h2 class="headline-title"><?php echo isset($value['title'])?$value['title']:''; ?></h2>
+                                        <h2 class="headline-title <?php if($key==1){ echo 'mb-4'; } ?>"><?php echo isset($value['title'])?$value['title']:''; ?></h2>
                                     </a>    
                                     <?php 
                                     }
@@ -118,7 +118,7 @@
                                 data: {
                                         last_id: last_id, 
                                         id_category: id_category,
-                                }, 
+                                },
                                 dataType: "text", 
                                 success: function(data){
                                     var cekdata = data.includes("<article");
@@ -133,9 +133,6 @@
                             });
                         }
                 </script>
-                <!-- <div class="row justify-content-center">
-                    <a id="tombol-lainnya" href="javascript:void(0)" class="btn btn-load-more">Load more</a>
-                </div> -->
             </div>
             <div class="col-lg-3">
                 <?php $this->load->view('shared/sidebar'); ?>

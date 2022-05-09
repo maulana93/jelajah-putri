@@ -23,8 +23,9 @@
                     if (isset($listsSearch) && count($listsSearch)>0) { 
                         foreach($listsSearch as $key=>$value) { 
                         ?>              
+                        <article>
                             <div class="border-top">
-                                <a href="">
+                                <a href="<?php echo url_format($value); ?>">
                                     <div class="row mt-4">
                                         <div class="col-lg-8">
                                             <h2><?php echo isset($value['title'])?$value['title']:''; ?></h2>
@@ -36,8 +37,14 @@
                                     </div>
                                 </a>
                             </div>
-                            <?php 
+                        </article>
+                        <?php 
                         }
+                        ?>
+                        <?php if ($key == count($listsSearch) - 1){ ?>
+                            <input type="hidden" value="<?php echo $value['id']; ?>" class="last_id">
+                        <?php } ?>
+                        <?php
                     }
                     ?>
                 </div>
@@ -45,11 +52,34 @@
                 if (isset($listsSearch) && count($listsSearch)>0) { 
                     ?>  
                         <div class="row justify-content-center">
-                            <button type="button" class="btn btn-load-more">Load more</button>
+                            <button id="load_button" onclick="load_click()" class="btn btn-load-more">Load more</button>
                         </div>
                     <?php 
                 }
                 ?>
+                <script>
+                    function load_click(){
+                        var last_id  = $(".last_id").val();
+                        $.ajax({  
+                                url: "<?php echo base_url().'kanal/getAllDataNext/'; ?>",
+                                method: "POST",
+                                data: {
+                                        last_id: last_id
+                                },
+                                dataType: "text", 
+                                success: function(data){
+                                    var cekdata = data.includes("<article");
+                                    if(cekdata){
+                                        $('.last_id').remove();
+                                        $(".list-news").append(data);
+                                        $("#load_button").show();
+                                    } else {
+                                        $("#load_button").hide();
+                                    }
+                                }
+                            });
+                        }
+                </script>
             </div>
             <div class="col-lg-3">
                 <?php $this->load->view('shared/sidebar'); ?>

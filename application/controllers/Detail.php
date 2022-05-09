@@ -17,7 +17,7 @@ public function __construct()
 		
 		$data['detail'] = $this->m_content->listdata(array('id'=>$id));
 		$id_category = $data['detail'][0]['id_category'];
-		$data['listsContent'] = $this->m_kanal->listContent(array('id_category'=>$id_category, 'limit'=>5));
+		$data['listsContent'] = $this->m_kanal->listContent(array('id_exclude'=>$id, 'id_category'=>$id_category, 'limit'=>5));
 		$data['banner'] = $this->m_banner->listData();
 		$this->load->view('detail',$data);
 	}
