@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <title><?php echo isset($title)?$title:''; ?></title>
         <link rel="shortcut icon" href="<?php echo base_url().'assets/images/favicon.png'; ?>" type="image/png" />
         <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.css" rel="stylesheet">
-        <link href="<?php echo base_url(); ?>assets/css/main.css?v=1.4" rel="stylesheet">
+        <link href="<?php echo base_url(); ?>assets/css/main.css?v=1.5" rel="stylesheet">
         <link href="<?php echo base_url(); ?>assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>

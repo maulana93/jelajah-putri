@@ -402,10 +402,10 @@ img.big-opini{
     margin: auto;
 }
 img.reguler-opini{
-    object-fit: cover;
+    object-fit: cover !important;
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 150px !important;
+    height: 150px !important;
     display: block;
     margin: auto;
 }
