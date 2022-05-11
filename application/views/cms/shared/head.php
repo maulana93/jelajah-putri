@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <title><?php echo isset($title)?$title:''; ?></title>
         <link rel="shortcut icon" href="<?php echo base_url().'assets/images/favicon.png'; ?>" type="image/png" />
         <link href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.css" rel="stylesheet">
-        <link href="<?php echo base_url(); ?>assets/cms/css/main.css" rel="stylesheet">
+        <link href="<?php echo base_url(); ?>assets/cms/css/main.css?v=1.1" rel="stylesheet">
         <link href="<?php echo base_url(); ?>assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/cms/datatables/datatables.min.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>

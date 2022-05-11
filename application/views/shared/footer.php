@@ -12,7 +12,7 @@
                             <a class="nav-link" href="<?php echo base_url().'kontak'; ?>">Hubungi kami</a>
                         </li>
                     </ul>
-                    <p>Copyright © 2022 Jelajah Putri</p>
+                    <p>Copyright © <?php echo date('Y'); ?> Jelajah Putri</p>
                 </div>
             </div>
         </div>

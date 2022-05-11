@@ -328,7 +328,6 @@ h1.title-page{
     font-family: 'Georgia';
     font-weight: 400;
     font-size: 20px;
-    line-height: 1.2;
     letter-spacing: -0.01em;
     color: #111111;
 }
@@ -436,6 +435,11 @@ img.reguler-opini{
 }
 .carousel-control-prev-icon, .carousel-control-next-icon{
     height: 50px;
+}
+.list-news img{
+    object-fit: cover;
+    width: 255px;
+    height: 139px;
 }
 @media screen and (max-width: 425px) {
     .navbar-brand img{
