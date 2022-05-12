@@ -76,11 +76,14 @@ Class M_home extends CI_Model
 	private function __getContentSQL($id_category){
 		$result = array();
 		$limit = 6;
-		if($id_category == 5){
+		if($id_category == $this->config->item('kanal-id-bertualang')){
+			$limit = 9;
+		}
+		if($id_category == $this->config->item('kanal-id-berbakti')){
 			$limit = 3;
 		}
 		$query = $this->db->query("
-			SELECT * FROM content WHERE status = 1 AND id_category=".$id_category." LIMIT 0,".$limit."
+			SELECT * FROM content WHERE status = 1 AND id_category=".$id_category." order by id desc LIMIT 0,".$limit."
 		");
 		$result = $query->result_array();
 		$result = $this->__getPenulisContent($result);

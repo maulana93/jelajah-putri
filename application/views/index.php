@@ -48,38 +48,42 @@
         <div class="row mt-5">
             <div class="col-lg-9">
                 <?php
-                    if(isset($category) && count($category)>0){ 
-                        foreach($category as $key => $value){ 
-                            if(isset($value['headline']) && count($value['headline'])>0){                           
-                            ?>
-                            <div class="update-news d-flex align-items-center justify-content-between mb-5">
-                                <h3><?php echo $value['title']; ?></h3>
-                                <a href="<?php echo base_url().strtolower($value['title']); ?>">Selengkapnya »</a>
-                            </div>
-                            <?php if($value['id'] == $this->config->item('kanal-id-opini')) { ?>
-                                <div class="row article article--opini mb-4">
-                                    <?php foreach($value['content'] as $key => $value){ ?>
-                                    <div class="col-lg-4 text-center">
-                                        <a href="<?php echo url_format($value); ?>">
-                                            <img src="<?php echo base_url().$value['image']; ?>" class="img-fluid mb-2">
-                                            <h4><?php echo $value['title']; ?></h4>
-                                            <p><?php echo $value['penulis'][0]['fullname']; ?></p>
-                                        </a>
+                    if(isset($category) && count($category)>0){
+                        foreach($this->config->item('kanal-id-order') as $key => $value1){
+                            foreach($category as $key => $value){ 
+                                if($value1 == $value['id']) {
+                                    if(isset($value['headline']) && count($value['headline'])>0){                           
+                                    ?>
+                                    <div class="update-news d-flex align-items-center justify-content-between mb-5">
+                                        <h3><?php echo $value['title']; ?></h3>
+                                        <a href="<?php echo base_url().strtolower($value['title']); ?>">Selengkapnya »</a>
                                     </div>
-                                    <?php } ?>
-                                </div>
-                            <?php } else { ?>
-                                <div class="row article mb-4">
-                                    <?php foreach($value['content'] as $key => $value){ ?>
-                                        <div class="col-lg-4">
-                                            <a href="<?php echo url_format($value); ?>">
-                                                <img src="<?php echo base_url().$value['image']; ?>" class="img-fluid mb-2">
-                                                <h4 class="mb-3"><?php echo $value['title']; ?></h4>
-                                            </a>
+                                    <?php if($value['id'] == $this->config->item('kanal-id-opini')) { ?>
+                                        <div class="row article article--opini mb-4">
+                                            <?php foreach($value['content'] as $key => $value){ ?>
+                                            <div class="col-lg-4 text-center">
+                                                <a href="<?php echo url_format($value); ?>">
+                                                    <img src="<?php echo base_url().$value['image']; ?>" class="img-fluid mb-2">
+                                                    <h4><?php echo $value['title']; ?></h4>
+                                                    <p><?php echo $value['penulis'][0]['fullname']; ?></p>
+                                                </a>
+                                            </div>
+                                            <?php } ?>
                                         </div>
-                                    <?php } ?>
-                                </div>
-                            <?php } 
+                                    <?php } else { ?>
+                                        <div class="row article mb-4">
+                                            <?php foreach($value['content'] as $key => $value){ ?>
+                                                <div class="col-lg-4">
+                                                    <a href="<?php echo url_format($value); ?>">
+                                                        <img src="<?php echo base_url().$value['image']; ?>" class="img-fluid mb-2">
+                                                        <h4 class="mb-3"><?php echo $value['title']; ?></h4>
+                                                    </a>
+                                                </div>
+                                            <?php } ?>
+                                        </div>
+                                    <?php } 
+                                    }
+                                }
                             }
                         }
                     }

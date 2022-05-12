@@ -17,6 +17,7 @@ public function __construct()
 		$data['cover_article'] = $this->m_home->getArticleCover();
 		$data['category'] = $this->m_home->listCategory();
 		$data['banner'] = $this->m_banner->listData();
+		// $data['category_order'] = $this->m_banner->listData();
 		// echo "<pre>";var_dump($data['category']);exit();
 		$this->load->view('index',$data);
 	}

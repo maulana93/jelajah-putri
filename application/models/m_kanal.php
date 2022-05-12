@@ -23,6 +23,7 @@ Class M_kanal extends CI_Model
 		$last_id = isset($params['last_id'])?$params['last_id']:'';
 		$limit = isset($params["limit"])?$params["limit"]:'';
 		$id_exclude = isset($params["id_exclude"])?$params["id_exclude"]:'';
+		$order = isset($params["order"])?$params["order"]:'';
 
 		$conditional = "WHERE status = 1 ";
 
@@ -36,6 +37,10 @@ Class M_kanal extends CI_Model
 
 		if($last_id != '') {
 			$conditional .= " AND id > ".$last_id;
+		}
+
+		if($order == '') {
+			$conditional .= " order by id desc";
 		}
 
 		if($limit != '') {
