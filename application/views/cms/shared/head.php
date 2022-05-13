@@ -17,13 +17,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.js"></script>
         <script>
             tinymce.init({
-            selector: '#mytextarea',
-            plugins: 'a11ychecker advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
-            toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter pageembed permanentpen table',
-            toolbar_mode: 'floating',
-            tinycomments_mode: 'embedded',
-            tinycomments_author: 'Author name',
-            height: 400,
+                selector: '#mytextarea',
+                plugins: 'a11ychecker advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker link',
+                toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter pageembed permanentpen table link',
+                toolbar_mode: 'floating',
+                tinycomments_mode: 'embedded',
+                tinycomments_author: 'Author name',
+                height: 400,
             });
         </script>
     </head>

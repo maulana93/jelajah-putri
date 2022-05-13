@@ -52,7 +52,18 @@
 								</div>
 								<div class="form-group">
 									<label>Ringkasan</label>
-									<textarea class="form-control" name="summary" rows="7" maxlength="175" required></textarea>
+									<textarea class="form-control" name="summary" rows="7" maxlength="180" required></textarea>
+									<span class="counter-summary"></span>
+									<script>
+										let input1 = document.querySelector('.form-group textarea')
+											counter1 = document.querySelector('.counter-summary')
+											maxLength1 = input1.getAttribute('maxlength')
+											counter1.innerHTML = `Sisa karakter ${maxLength1}`
+
+											input1.addEventListener('keyup', (e) => {
+												counter1.innerHTML = `Sisa karakter ${parseFloat(maxLength1) - e.target.value.length}`
+											})
+									</script>
 								</div><div class="form-group">
 									<label>Konten</label>
 									<textarea class="form-control" name="body" id="mytextarea"></textarea>
