@@ -26,7 +26,7 @@ public function __construct()
 	function getAllDataNext(){
 		$last_id = $this->input->post('last_id');
 
-		$data['listsContent'] = $this->m_search->listContent(array('last_id'=>$last_id,'limit'=>10));
+		$data['listsSearch'] = $this->m_search->listContent(array('last_id'=>$last_id,'limit'=>10));
 		$this->load->view('searchnext',$data);
 	}
 }

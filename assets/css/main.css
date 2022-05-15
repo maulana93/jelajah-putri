@@ -539,4 +539,16 @@ img.reguler-opini{
     .headline-kanal img.big-img{
         height: auto;
     }
+    .list-news img{
+        width: 100%;
+        height: auto;
+    }
+    .headline-kanal img{
+        width: 100%;
+        height: auto;
+    }
+    .headline-kanal img.big-opini{
+        height: 150px;
+        width: 150px;
+    }
 }

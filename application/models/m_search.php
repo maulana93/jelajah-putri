@@ -4,6 +4,7 @@ Class M_search extends CI_Model
 	public function listdata($params=array())
 	{
 		$keyword = isset($params["keyword"])?$params["keyword"]:'';
+		$order = isset($params["order"])?$params["order"]:'';
 		$limit = isset($params["limit"])?$params["limit"]:'';
 
 		$conditional = " WHERE status = 1 ";
@@ -14,6 +15,10 @@ Class M_search extends CI_Model
 				OR summary like '%".$this->db->escape_str($keyword)."%'
 				OR body like '%".$this->db->escape_str($keyword)."%'
 			";
+		}
+
+		if($order == '') {
+			$conditional .= " order by id desc";
 		}
 
 		if($limit != '') {
@@ -27,18 +32,18 @@ Class M_search extends CI_Model
 	}
 	public function listContent($params=array())
 	{
-		$id_category = isset($params["id_category"])?$params["id_category"]:'';
 		$last_id = isset($params['last_id'])?$params['last_id']:'';
+		$order = isset($params["order"])?$params["order"]:'';
 		$limit = isset($params["limit"])?$params["limit"]:'';
 
 		$conditional = "WHERE status = 1 ";
 
-		if($id_category != '') {
-			$conditional .= "AND id_category=".$id_category."";
+		if($last_id != '') {
+			$conditional .= " AND id < ".$last_id;
 		}
 
-		if($last_id != '') {
-			$conditional .= " AND id > ".$last_id;
+		if($order == '') {
+			$conditional .= " order by id desc";
 		}
 
 		if($limit != '') {

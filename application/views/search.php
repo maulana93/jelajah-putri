@@ -23,6 +23,13 @@
                     if (isset($listsSearch) && count($listsSearch)>0) { 
                         foreach($listsSearch as $key=>$value) { 
                         ?>              
+                        <?php
+                            $reguler_opini = '';
+                            if(isset($listsSearch[0]['id_category']) && $listsSearch[0]['id_category'] == $this->config->item('kanal-id-opini'))
+                            {
+                                $reguler_opini = ' reguler-opini';
+                            }
+                        ?>
                         <article>
                             <div class="border-top">
                                 <a href="<?php echo url_format($value); ?>">
@@ -32,7 +39,7 @@
                                             <p><?php echo isset($value['summary'])?$value['summary']:''; ?></p>
                                         </div>
                                         <div class="col-lg-4">
-                                            <img src="<?php echo base_url().$value['image']; ?>" class="img-fluid">
+                                            <img src="<?php echo base_url().$value['image']; ?>" class="img-fluid<?php echo $reguler_opini; ?>">
                                         </div>
                                     </div>
                                 </a>
@@ -61,7 +68,7 @@
                     function load_click(){
                         var last_id  = $(".last_id").val();
                         $.ajax({  
-                                url: "<?php echo base_url().'kanal/getAllDataNext/'; ?>",
+                                url: "<?php echo base_url().'search/getAllDataNext/'; ?>",
                                 method: "POST",
                                 data: {
                                         last_id: last_id
