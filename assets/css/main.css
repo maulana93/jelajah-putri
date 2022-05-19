@@ -450,12 +450,13 @@ img.reguler-opini{
 .detail-info .img-opini{
     object-fit: cover;
     height: 50px;
+    width: 50px;
     border-radius: 50%;
 }
 .kanal-info .img-opini{
     object-fit: cover;
     height: 30px;
-    width: auto !important;
+    width: 30px;
     border-radius: 50%;
 }
 .kanal-info p{
