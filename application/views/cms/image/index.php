@@ -40,15 +40,9 @@
 										<td>
 											<script>
 												function myFunction(key) {
-													/* Get the text field */
-													var copyText = document.getElementById("myInput"+ key);
-
-													/* Select the text field */
+													var copyText = document.getElementById('myInput'+ key)
 													copyText.select();
-													copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-													/* Copy the text inside the text field */
-													navigator.clipboard.writeText(copyText.value);
+													document.execCommand('copy')
 
 													/* Alert the copied text */
 													alert("Link image berhasil dicopy");

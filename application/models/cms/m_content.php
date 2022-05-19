@@ -4,14 +4,30 @@ Class M_content extends CI_Model
 	public function listdata($params=array())
 	{
 		$id = isset($params["id"])?$params["id"]:'';
+		$id_user = isset($params["id_user"])?$params["id_user"]:'';
+		$headline = isset($params["headline"])?$params["headline"]:'';
+		$limit = isset($params["limit"])?$params["limit"]:'';
+		$order = isset($params["order"])?$params["order"]:'';
 
 		$conditional = " WHERE 1=1 ";
 
 		if($id != '') {
-			$conditional .= "AND id = '".$this->db->escape_str($id)."'";
+			$conditional .= " AND id = '".$this->db->escape_str($id)."'";
+		}
+		if($id_user != '') {
+			$conditional .= " AND id_user = '".$this->db->escape_str($id_user)."'";
+		}
+		if($headline != '') {
+			$conditional .= " AND is_headline = ".$this->db->escape_str($headline)."";
+		}
+		if($order == '') {
+			$conditional .= " order by id DESC";
+		}
+		if($limit != '') {
+			$conditional .= " limit 0,".$this->db->escape_str($limit)."";
 		}
 
-		$mysql = "select * from content ".$conditional." order by id DESC";
+		$mysql = "select * from content ".$conditional." ";
 		$q = $this->db->query($mysql);
 		$result = $q->result_array();
 		$result = $this->__getCategory($result);

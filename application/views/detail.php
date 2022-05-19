@@ -24,17 +24,15 @@
                         ?>
                         <h1><?php echo $value['title']; ?></h1>
                         <p class="summary"><?php echo $value['summary']; ?></p>
-                        <div class="detail-info d-flex justify-content-between my-4">
-                            <div class="detail-info">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <?php if($value['profile_image'] != '') { ?>
+                        <div class="d-flex align-items-center justify-content-between my-4">
+                            <div class="detail-info align-items-center d-flex">
+                                <!-- <div class="row"> -->
+                                    <?php if($value['profile_image'] != '') { ?>
+                                        <div class="mr-3">
                                             <img class="img-fluid img-opini" src="<?php echo base_url().$value['profile_image']; ?>">
-                                        <?php } else { ?>
-                                            <img class="img-fluid" src="<?php echo base_url().'assets/images/default-profile-picture.jpg'; ?>">
-                                        <?php } ?>
-                                    </div>
-                                    <div class="col-8 pl-0">
+                                        </div>
+                                    <?php } ?>
+                                    <div>
                                         <?php if($value['profile_name'] != '') { ?>
                                             <p><?php echo $value['profile_name']; ?></p>
                                         <?php } else { ?>
@@ -42,12 +40,12 @@
                                         <?php } ?>
                                         <span><?php echo date("j F Y", strtotime( $value['datecreated'])); ?></span>
                                     </div>
-                                </div>
+                                <!-- </div> -->
                             </div>
                             <div class="detail-share">
-                                <a href="https://twitter.com/intent/tweet?text=<?php echo $value['title']; ?>+<?php echo base_url().$_SERVER['REQUEST_URI']; ?>+via%20@KATADATAcoid%20%E2%80%8F<?php echo base_url().$_SERVER['REQUEST_URI']; ?>"><img class="img-fluid" src="<?php echo base_url().'assets/images/logo-twitter.png'; ?>"></a>
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo base_url().$_SERVER['REQUEST_URI']; ?>"><img class="img-fluid" src="<?php echo base_url().'assets/images/logo-fb.png'; ?>"></a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&title=<?php echo $value['title']; ?>&url=<?php echo base_url().$_SERVER['REQUEST_URI']; ?>"><img class="img-fluid" src="<?php echo base_url().'assets/images/logo-linkedin.png'; ?>"></a>
+                                <a href="https://twitter.com/intent/tweet?text=<?php echo $value['title']; ?>+<?php echo $meta_url; ?>"><img class="img-fluid" src="<?php echo base_url().'assets/images/logo-twitter.png'; ?>"></a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $meta_url; ?>"><img class="img-fluid" src="<?php echo base_url().'assets/images/logo-fb.png'; ?>"></a>
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&title=<?php echo $value['title']; ?>&url=<?php echo $meta_url; ?>"><img class="img-fluid" src="<?php echo base_url().'assets/images/logo-linkedin.png'; ?>"></a>
                             </div>
                         </div>
                         <img class="img-fluid img-header" src="<?php echo base_url().$value['image']; ?>">

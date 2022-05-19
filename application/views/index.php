@@ -71,7 +71,7 @@
                                                     $profile_name = $value['profile_name'];
                                                 }
                                             ?>
-                                            <div class="col-lg-4 text-center">
+                                            <div class="col-lg-4 text-center mb-3">
                                                 <a href="<?php echo url_format($value); ?>">
                                                     <img src="<?php echo base_url().$thumb_image; ?>" class="img-fluid mb-2">
                                                     <h4><?php echo $value['title']; ?></h4>
@@ -83,7 +83,7 @@
                                     <?php } else { ?>
                                         <div class="row article mb-4">
                                             <?php foreach($value['content'] as $key => $value){ ?>
-                                                <div class="col-lg-4">
+                                                <div class="col-lg-4 mb-3">
                                                     <a href="<?php echo url_format($value); ?>">
                                                         <img src="<?php echo base_url().$value['image']; ?>" class="img-fluid mb-2">
                                                         <h4 class="mb-3"><?php echo $value['title']; ?></h4>

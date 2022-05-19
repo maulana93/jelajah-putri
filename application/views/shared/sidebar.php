@@ -14,6 +14,7 @@
         <h4>FOLLOW US</H4>
         <P>@jelajahputri</p>
     </div>
+    <div class="elfsight-app-dc205a0e-1be2-42ae-9533-440bca657f88 mt-3" style="display: block;"></div>
     <h4>FIND US ON SOCIAL MEDIA</H4>
     <a href=""><img src="<?php echo base_url().'assets/images/logo-ig.png'; ?>" class="img-fluid mr-3"></a>
     <a href=""><img src="<?php echo base_url().'assets/images/logo-fb.png'; ?>" class="img-fluid mr-3"></a>

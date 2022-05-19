@@ -18,12 +18,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script>
             tinymce.init({
                 selector: '#mytextarea',
-                plugins: 'a11ychecker advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker link image',
+                plugins: 'a11ychecker advcode casechange export formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker link image contextmenu',
                 toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter pageembed permanentpen table link image',
                 toolbar_mode: 'floating',
                 tinycomments_mode: 'embedded',
                 tinycomments_author: 'Author name',
                 height: 400,
+                contextmenu: "link image media inserttable | cell row column deletetable | copy paste cut"
             });
         </script>
     </head>

@@ -50,6 +50,30 @@ Class M_kanal extends CI_Model
 		$mysql = "SELECT * FROM content ".$conditional."";
 		$q = $this->db->query($mysql);
 		$result = $q->result_array();
+		$result = $this->__getPenulisContent($result);
+		return $result;
+	}
+
+	private function __getPenulisContent($result){
+		if (count($result) > 0) {
+			foreach ($result as $key => $value) {
+				if ($value['id_user'] != '') {
+					$result[$key]['penulis'] = $this->__getPenulisContentSQL($value['id_user']);
+				}else{
+					$result[$key]['penulis'] = "";
+				}
+			}
+		}
+
+		return $result;
+	}
+
+	private function __getPenulisContentSQL($id_user){
+		$result = array();
+		$query = $this->db->query("
+			SELECT * FROM user WHERE status = 1 AND id=".$id_user."
+		");
+		$result = $query->result_array();
 		return $result;
 	}
 }
