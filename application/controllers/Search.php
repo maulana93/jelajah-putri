@@ -24,9 +24,13 @@ public function __construct()
 		}
 	}
 	function getAllDataNext(){
+		$keyword = '';
 		$last_id = $this->input->post('last_id');
+		if(isset($_GET['q'])){
+			$keyword = $_GET['q'];
+		}
 
-		$data['listsSearch'] = $this->m_search->listContent(array('last_id'=>$last_id,'limit'=>10));
+		$data['listsSearch'] = $this->m_search->listContent(array('keyword'=>$keyword,'last_id'=>$last_id,'limit'=>10));
 		$this->load->view('searchnext',$data);
 	}
 }
