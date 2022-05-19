@@ -38,13 +38,24 @@ public function __construct()
 			$is_headline = $this->input->post('headline');
 			$datecreated = date("Y-m-d H:i:s");
 			$image = $_FILES["image"]["name"];
+			$profile_image = $_FILES["profile_image"]["name"];
+			$profile_name = $this->input->post('profile_name');
 			$status = $this->input->post('status');
 
 			$title_image = md5($title);
 			$path = 'assets/images/articles';
 			$ext = pathinfo($image, PATHINFO_EXTENSION);
 			$file_name = date("Y-m-d-H-i-s").$title_image.'.'.$ext;
-			$path_image = $path.'/'.$file_name;
+			$path_image = $path.'/'.$file_name;			
+
+			$profile_path_image = '';
+			if($profile_image != ''){
+				$title_image_profile = md5($profile_name);
+				$profile_path = 'assets/images/profile';
+				$ext = pathinfo($profile_image, PATHINFO_EXTENSION);
+				$profile_file_name = date("Y-m-d-H-i-s").$title_image_profile.'.'.$ext;
+				$profile_path_image = $profile_path.'/'.$profile_file_name;
+			}			
 
 			$insert = $this->m_content->insertData(array(
 				'title' => $title
@@ -56,11 +67,17 @@ public function __construct()
 				,'is_headline' => $is_headline
 				,'datecreated' => $datecreated
 				,'image' => $path_image
+				,'profile_image' => $profile_path_image
+				,'profile_name' => $profile_name
 				,'status' => $status
 			  ));
 
 			if($insert == 'success'){
 				$this->upload_photo('image',$file_name,$path);
+
+				if($profile_image != ''){
+					$this->upload_photo('profile_image',$profile_file_name,$profile_path);
+				}
 			}			
 						
 			redirect(base_url().'cms/content');			
@@ -89,6 +106,8 @@ public function __construct()
 			$body = $this->input->post('body');
 			$id_user = $this->session->userdata('SESSION_ID');
 			$is_headline = $this->input->post('headline');
+			$profile_image = $_FILES["profile_image"]["name"];
+			$profile_name = $this->input->post('profile_name');
 			$status = $this->input->post('status');
 
 			$title_image = md5($title);
@@ -97,8 +116,20 @@ public function __construct()
 			$file_name = date("Y-m-d-H-i-s").$title_image.'.'.$ext;
 			$path_image = $path.'/'.$file_name;
 
+			$profile_path_image = '';
+			if($profile_image != ''){
+				$title_image_profile = md5($profile_name);
+				$profile_path = 'assets/images/profile';
+				$ext = pathinfo($profile_image, PATHINFO_EXTENSION);
+				$profile_file_name = date("Y-m-d-H-i-s").$title_image_profile.'.'.$ext;
+				$profile_path_image = $profile_path.'/'.$profile_file_name;
+			}		
+
 			if($image == ''){
 				$path_image = $this->input->post('image_existing');
+			}
+			if($profile_image == ''){
+				$profile_path_image = $this->input->post('profile_image_existing');
 			}
 
 			$update = $this->m_content->updateData(array(
@@ -111,13 +142,18 @@ public function __construct()
 				,'id_user' => $id_user
 				,'is_headline' => $is_headline
 				,'image' => $path_image
+				,'profile_image' => $profile_path_image
+				,'profile_name' => $profile_name
 				,'status'=>$status
 			));
 
-			if(!empty($image)){
-				if($update == 'success'){
+			if($update == 'success'){
+				if(!empty($image)){
 					$this->upload_photo('image',$file_name,$path);
 				}	
+				if(!empty($profile_image)){
+					$this->upload_photo('profile_image',$profile_file_name,$profile_path);
+				}
 			}	
 						
 			redirect(base_url().'cms/content');					

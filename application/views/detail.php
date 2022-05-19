@@ -26,8 +26,23 @@
                         <p class="summary"><?php echo $value['summary']; ?></p>
                         <div class="detail-info d-flex justify-content-between my-4">
                             <div class="detail-info">
-                                <p><?php echo $value['penulis'][0]['fullname']; ?></p>
-                                <span><?php echo date("j F Y", strtotime( $value['datecreated'])); ?></span>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <?php if($value['profile_image'] != '') { ?>
+                                            <img class="img-fluid img-opini" src="<?php echo base_url().$value['profile_image']; ?>">
+                                        <?php } else { ?>
+                                            <img class="img-fluid" src="<?php echo base_url().'assets/images/default-profile-picture.jpg'; ?>">
+                                        <?php } ?>
+                                    </div>
+                                    <div class="col-8 pl-0">
+                                        <?php if($value['profile_name'] != '') { ?>
+                                            <p><?php echo $value['profile_name']; ?></p>
+                                        <?php } else { ?>
+                                            <p><?php echo $value['penulis'][0]['fullname']; ?></p>
+                                        <?php } ?>
+                                        <span><?php echo date("j F Y", strtotime( $value['datecreated'])); ?></span>
+                                    </div>
+                                </div>
                             </div>
                             <div class="detail-share">
                                 <a href="https://twitter.com/intent/tweet?text=<?php echo $value['title']; ?>+<?php echo base_url().$_SERVER['REQUEST_URI']; ?>+via%20@KATADATAcoid%20%E2%80%8F<?php echo base_url().$_SERVER['REQUEST_URI']; ?>"><img class="img-fluid" src="<?php echo base_url().'assets/images/logo-twitter.png'; ?>"></a>

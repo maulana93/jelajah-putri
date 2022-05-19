@@ -1,4 +1,15 @@
 <?php $this->load->view('cms/shared/head'); ?>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$("#formOpini").hide();
+			$('#category').change(function(){
+				var id_category = $('#category').val();
+				if(id_category == 4){
+					$("#formOpini").show();
+				}
+			})
+		});
+	</script>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-2 px-0">
@@ -37,7 +48,7 @@
 								</div>
 								<div class="form-group">
 									<label>Kategori</label>
-									<select class="form-control" name="category" required>
+									<select class="form-control" id="category" name="category" required>
 										<option value="" disabled selected>-- Pilih Kategori --</option>
 										<?php
 										if(isset($category)){										
@@ -71,6 +82,16 @@
 								<div class="form-group">
 									<label>Foto</label>
 									<input type="file" class="form-control" name="image" required>
+								</div>
+								<div id="formOpini">
+									<div class="form-group">
+										<label>Profile Image</label>
+										<input type="file" class="form-control" name="profile_image">
+									</div>
+									<div class="form-group">
+										<label>Profile Name</label>
+										<input type="text" class="form-control" name="profile_name" maxlength="50">
+									</div>
 								</div>
 								<div class="form-group">
 									<label>Headline</label>

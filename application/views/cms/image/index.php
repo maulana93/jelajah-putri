@@ -56,7 +56,7 @@
 											</script>
 											<button class="btn btn-small btn-success" onclick="myFunction(<?php echo $key; ?>)">Copy link image</button>
 											<a class="btn btn-small btn-warning" href="<?php echo base_url().'cms/image/edit/'.$value['id']; ?>">Edit</a>
-											<a class="btn btn-danger" onClick="javascript: return confirm('Yakin ingin hapus data');" href="<?php echo base_url().'cms/image/delete/'.$value['id']; ?>">Hapus</a>
+											<a class="btn btn-danger" onClick="javascript: return confirm('Yakin ingin hapus data?');" href="<?php echo base_url().'cms/image/delete/'.$value['id']; ?>">Hapus</a>
 										</td>
 									</tr> 
 									<?php

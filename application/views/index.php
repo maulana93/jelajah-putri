@@ -61,11 +61,21 @@
                                     <?php if($value['id'] == $this->config->item('kanal-id-opini')) { ?>
                                         <div class="row article article--opini mb-4">
                                             <?php foreach($value['content'] as $key => $value){ ?>
+                                            <?php
+                                                $thumb_image = $value['image'];
+                                                $profile_name = $value['penulis'][0]['fullname'];
+                                                if(isset($value['profile_image'])){
+                                                    $thumb_image = $value['profile_image'];
+                                                }
+                                                if(!empty($value['profile_name'])){
+                                                    $profile_name = $value['profile_name'];
+                                                }
+                                            ?>
                                             <div class="col-lg-4 text-center">
                                                 <a href="<?php echo url_format($value); ?>">
-                                                    <img src="<?php echo base_url().$value['image']; ?>" class="img-fluid mb-2">
+                                                    <img src="<?php echo base_url().$thumb_image; ?>" class="img-fluid mb-2">
                                                     <h4><?php echo $value['title']; ?></h4>
-                                                    <p><?php echo $value['penulis'][0]['fullname']; ?></p>
+                                                    <p><?php echo $profile_name; ?></p>
                                                 </a>
                                             </div>
                                             <?php } ?>

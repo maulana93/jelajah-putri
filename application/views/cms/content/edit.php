@@ -1,4 +1,16 @@
 <?php $this->load->view('cms/shared/head'); ?>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$('#category').change(function(){
+				var id_category = $('#category').val();
+				if(id_category == 4){
+					$("#formOpini").show();
+				} else {
+					$("#formOpini").hide();
+				}
+			})
+		});
+	</script>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-2 px-0">
@@ -21,6 +33,7 @@
 						<div class="col-lg-8">
 							<?php echo form_open_multipart(base_url().'cms/content/edit'); ?> 
 								<input type="hidden" class="form-control" name="image_existing" value="<?php echo isset($lists[0]['image'])?$lists[0]['image']:''; ?>" required>
+								<input type="hidden" class="form-control" name="profile_image_existing" value="<?php echo isset($lists[0]['profile_image'])?$lists[0]['profile_image']:''; ?>" required>
 								<input type="hidden" class="form-control" name="id" value="<?php echo isset($lists[0]['id'])?$lists[0]['id']:''; ?>" required> 
 								<div class="form-group">
 									<label>Judul</label>
@@ -39,7 +52,7 @@
 								</div>
 								<div class="form-group">
 									<label>Kategori</label>
-									<select class="form-control" name="category" required>
+									<select class="form-control" name="category" id="category" required>
 										<option value="" disabled>-- Pilih Kategori --</option>
 										<?php
 										if(isset($category)){										
@@ -77,6 +90,26 @@
 									<img src="<?php echo isset($lists[0]['image'])?base_url().$lists[0]['image']:''; ?>" class="img-fluid"><br>
 									<input type="file" class="form-control" name="image">
 								</div>
+								<?php 
+								if($lists[0]['id_category'] == $this->config->item('kanal-id-opini'))
+								{
+								?>
+								<div id="formOpini">
+									<div class="form-group">
+										<label>Profile Image</label><br>
+										<?php if(!empty($lists[0]['profile_image'])) { ?>
+										<img src="<?php echo isset($lists[0]['profile_image'])?base_url().$lists[0]['profile_image']:''; ?>" class="img-fluid"><br>
+										<?php } ?>
+										<input type="file" class="form-control" name="profile_image">
+									</div>
+									<div class="form-group">
+										<label>Profile Name</label>
+										<input type="text" class="form-control" name="profile_name" maxlength="50" value="<?php echo isset($lists[0]['profile_name'])?$lists[0]['profile_name']:''; ?>">
+									</div>
+								</div>
+								<?php
+								}
+								?>
 								<div class="form-group">
 									<label>Headline</label>
 									<div class="form-check">
@@ -95,13 +128,13 @@
 								<div class="form-group">
 									<label>Status</label>
 									<div class="form-check">
-										<input class="form-check-input" type="radio" name="status" id="status1" value="1" <?php if(isset($lists[0]['is_headline']) && $lists[0]['is_headline'] == 1) { echo 'checked'; } ?>>
+										<input class="form-check-input" type="radio" name="status" id="status1" value="1" <?php if(isset($lists[0]['status']) && $lists[0]['status'] == 1) { echo 'checked'; } ?>>
 										<label class="form-check-label" for="status1">
 										Aktif
 										</label>
 									</div>
 									<div class="form-check">
-										<input class="form-check-input" type="radio" name="status" id="status2" value="0" <?php if(isset($lists[0]['is_headline']) && $lists[0]['is_headline'] == 0) { echo 'checked'; } ?>>
+										<input class="form-check-input" type="radio" name="status" id="status2" value="0" <?php if(isset($lists[0]['status']) && $lists[0]['status'] == 0) { echo 'checked'; } ?>>
 										<label class="form-check-label" for="status2">
 											Tidak Aktif
 										</label>

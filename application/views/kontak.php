@@ -33,11 +33,9 @@
                                 <div class="form-group">
                                     <textarea class="form-control" rows="7" name="messages" placeholder="Messages" required><?php echo isset($messages)?$messages:''; ?></textarea>
                                 </div>
-                                <div class="row justify-content-end">
-                                    <div class="col-lg-6">
-                                        <button type="button" class="btn btn-cancel mr-4">Cancel</button>
-                                        <input type="submit" name="kirim" class="btn btn-submit" value="Submit">
-                                    </div>
+                                <div class="row justify-content-end pr-3">
+                                    <button type="button" class="btn btn-cancel mr-4">Cancel</button>
+                                    <input type="submit" name="kirim" class="btn btn-submit" value="Submit">
                                 </div>
                             </form>
                         </div>

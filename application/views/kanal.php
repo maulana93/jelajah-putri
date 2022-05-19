@@ -22,15 +22,8 @@
                             foreach($listsContent as $key=>$value) {
                                 if($key == 0){
                                 ?>
-                                    <?php
-                                        $big_opini = '';
-                                        if(isset($listsContent[0]['id_category']) && $listsContent[0]['id_category'] == $this->config->item('kanal-id-opini'))
-                                        {
-                                            $big_opini = ' big-opini';
-                                        }
-                                    ?>
                                     <a href="<?php echo url_format($value); ?>">
-                                        <img src="<?php echo base_url().isset($value['image'])?$value['image']:''; ?>" class="big-img img-fluid mb-2<?php echo $big_opini; ?>">
+                                        <img src="<?php echo base_url().isset($value['image'])?$value['image']:''; ?>" class="big-img img-fluid mb-2">
                                         <h2 class="main-headline-title"><?php echo isset($value['title'])?$value['title']:''; ?></h2>
                                         <p><?php echo isset($value['summary'])?$value['summary']:''; ?></p>
                                     </a>
@@ -46,15 +39,8 @@
                                 foreach($listsContent as $key=>$value) {
                                     if($key > 0 && $key < 3){
                                     ?>  
-                                    <?php
-                                        $reguler_opini = '';
-                                        if(isset($listsContent[0]['id_category']) && $listsContent[0]['id_category'] == $this->config->item('kanal-id-opini'))
-                                        {
-                                            $reguler_opini = ' reguler-opini';
-                                        }
-                                    ?>  
                                     <a href="<?php echo url_format($value); ?>">
-                                        <img src="<?php echo base_url().$value['image']; ?>" class="img-fluid mb-2<?php echo $reguler_opini; ?>">
+                                        <img src="<?php echo base_url().$value['image']; ?>" class="img-fluid mb-2">
                                         <h2 class="headline-title <?php if($key==1){ echo 'mb-4'; } ?>"><?php echo isset($value['title'])?$value['title']:''; ?></h2>
                                     </a>    
                                     <?php 
@@ -71,13 +57,6 @@
                         foreach($listsContent as $key=>$value) { 
                             if($key > 2){
                             ?>  
-                            <?php
-                                $reguler_opini = '';
-                                if(isset($listsContent[0]['id_category']) && $listsContent[0]['id_category'] == $this->config->item('kanal-id-opini'))
-                                {
-                                    $reguler_opini = ' reguler-opini';
-                                }
-                            ?>  
                             <article>
                                 <div class="border-top">
                                     <a href="<?php echo url_format($value); ?>">
@@ -87,7 +66,7 @@
                                                 <p><?php echo isset($value['summary'])?$value['summary']:''; ?></p>
                                             </div>
                                             <div class="col-lg-4">
-                                                <img src="<?php echo base_url().isset($value['image'])?$value['image']:''; ?>" class="img-fluid<?php echo $reguler_opini; ?>">
+                                                <img src="<?php echo base_url().isset($value['image'])?$value['image']:''; ?>" class="img-fluid">
                                             </div>
                                         </div>
                                     </a>
