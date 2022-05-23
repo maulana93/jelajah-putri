@@ -63,10 +63,10 @@
 								</div>
 								<div class="form-group">
 									<label>Ringkasan</label>
-									<textarea class="form-control" name="summary" rows="7" maxlength="180" required></textarea>
+									<textarea class="form-control" id="summary" name="summary" rows="7" maxlength="180" required></textarea>
 									<span class="counter-summary"></span>
 									<script>
-										let input1 = document.querySelector('.form-group textarea')
+										let input1 = document.querySelector('.form-group textarea#summary')
 											counter1 = document.querySelector('.counter-summary')
 											maxLength1 = input1.getAttribute('maxlength')
 											counter1.innerHTML = `Sisa karakter ${maxLength1}`
@@ -75,13 +75,29 @@
 												counter1.innerHTML = `Sisa karakter ${parseFloat(maxLength1) - e.target.value.length}`
 											})
 									</script>
-								</div><div class="form-group">
+								</div>
+								<div class="form-group">
 									<label>Konten</label>
 									<textarea class="form-control" name="body" id="mytextarea"></textarea>
 								</div>
 								<div class="form-group">
 									<label>Foto</label>
 									<input type="file" class="form-control" name="image" required>
+								</div>
+								<div class="form-group">
+									<label>Caption Foto</label>
+									<textarea class="form-control" id="captionImage" name="caption_image" rows="3" maxlength="180"></textarea>
+									<span class="counter-caption-image"></span>
+									<script>
+										let input2 = document.querySelector('.form-group textarea#captionImage')
+											counter2 = document.querySelector('.counter-caption-image')
+											maxLength2 = input2.getAttribute('maxlength')
+											counter2.innerHTML = `Sisa karakter ${maxLength2}`
+
+											input2.addEventListener('keyup', (e) => {
+												counter2.innerHTML = `Sisa karakter ${parseFloat(maxLength2) - e.target.value.length}`
+											})
+									</script>
 								</div>
 								<div id="formOpini">
 									<div class="form-group">

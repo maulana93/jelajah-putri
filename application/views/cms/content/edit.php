@@ -87,8 +87,23 @@
 								</div>
 								<div class="form-group">
 									<label>Foto</label><br>
-									<img src="<?php echo isset($lists[0]['image'])?base_url().$lists[0]['image']:''; ?>" class="img-fluid"><br>
+									<img style="height: 300px;" src="<?php echo isset($lists[0]['image'])?base_url().$lists[0]['image']:''; ?>" class="img-fluid"><br>
 									<input type="file" class="form-control" name="image">
+								</div>
+								<div class="form-group">
+									<label>Caption Foto</label>
+									<textarea class="form-control" id="captionImage" name="caption_image" rows="3" maxlength="180"><?php echo isset($lists[0]['caption_image'])?$lists[0]['caption_image']:''; ?></textarea>
+									<span class="counter-caption-image"></span>
+									<script>
+										let input2 = document.querySelector('.form-group textarea#captionImage')
+											counter2 = document.querySelector('.counter-caption-image')
+											maxLength2 = input2.getAttribute('maxlength')
+											counter2.innerHTML = `Sisa karakter ${maxLength2}`
+
+											input2.addEventListener('keyup', (e) => {
+												counter2.innerHTML = `Sisa karakter ${parseFloat(maxLength2) - e.target.value.length}`
+											})
+									</script>
 								</div>
 								<?php 
 								if($lists[0]['id_category'] == $this->config->item('kanal-id-opini'))
@@ -98,7 +113,7 @@
 									<div class="form-group">
 										<label>Profile Image</label><br>
 										<?php if(!empty($lists[0]['profile_image'])) { ?>
-										<img src="<?php echo isset($lists[0]['profile_image'])?base_url().$lists[0]['profile_image']:''; ?>" class="img-fluid"><br>
+										<img style="height: 300px;" src="<?php echo isset($lists[0]['profile_image'])?base_url().$lists[0]['profile_image']:''; ?>" class="img-fluid"><br>
 										<?php } ?>
 										<input type="file" class="form-control" name="profile_image">
 									</div>

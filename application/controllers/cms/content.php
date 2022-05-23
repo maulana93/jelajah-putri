@@ -38,6 +38,7 @@ public function __construct()
 			$is_headline = $this->input->post('headline');
 			$datecreated = date("Y-m-d H:i:s");
 			$image = $_FILES["image"]["name"];
+			$caption_image = $this->input->post('caption_image');
 			$profile_image = $_FILES["profile_image"]["name"];
 			$profile_name = $this->input->post('profile_name');
 			$status = $this->input->post('status');
@@ -67,6 +68,7 @@ public function __construct()
 				,'is_headline' => $is_headline
 				,'datecreated' => $datecreated
 				,'image' => $path_image
+				,'caption_image' => $caption_image
 				,'profile_image' => $profile_path_image
 				,'profile_name' => $profile_name
 				,'status' => $status
@@ -103,6 +105,7 @@ public function __construct()
 			$id_category = $this->input->post('category');
 			$summary = $this->input->post('summary');
 			$image = $_FILES["image"]["name"];
+			$caption_image = $this->input->post('caption_image');
 			$body = $this->input->post('body');
 			$id_user = $this->session->userdata('SESSION_ID');
 			$is_headline = $this->input->post('headline');
@@ -142,6 +145,7 @@ public function __construct()
 				,'id_user' => $id_user
 				,'is_headline' => $is_headline
 				,'image' => $path_image
+				,'caption_image' => $caption_image
 				,'profile_image' => $profile_path_image
 				,'profile_name' => $profile_name
 				,'status'=>$status

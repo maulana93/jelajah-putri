@@ -15,9 +15,12 @@
         <P>@jelajahputri</p>
     </div>
     <div class="elfsight-app-dc205a0e-1be2-42ae-9533-440bca657f88 mt-3" style="display: block;"></div>
-    <h4>FIND US ON SOCIAL MEDIA</H4>
-    <a href=""><img src="<?php echo base_url().'assets/images/logo-ig.png'; ?>" class="img-fluid mr-3"></a>
-    <a href=""><img src="<?php echo base_url().'assets/images/logo-fb.png'; ?>" class="img-fluid mr-3"></a>
-    <a href=""><img src="<?php echo base_url().'assets/images/logo-linkedin.png'; ?>" class="img-fluid mr-3"></a>
-    <a href=""><img src="<?php echo base_url().'assets/images/logo-youtube.png'; ?>" class="img-fluid"></a>
+    <h4 class="mt-3">FIND US ON SOCIAL MEDIA</H4>
+    <div class="d-flex justify-content-between">
+        <a href="https://www.instagram.com/jelajahputri"><img src="<?php echo base_url().'assets/images/logo-ig.png'; ?>" class="img-fluid img-socmed mr-3"></a>
+        <a href=""><img src="<?php echo base_url().'assets/images/logo-fb.png'; ?>" class="img-fluid img-socmed mr-3"></a>
+        <a href=""><img src="<?php echo base_url().'assets/images/logo-linkedin.png'; ?>" class="img-fluid img-socmed mr-3"></a>
+        <a href=""><img src="<?php echo base_url().'assets/images/logo-youtube.png'; ?>" class="img-fluid img-socmed mr-3"></a>
+        <a href="http://www.tiktok.com/@jelajahputri"><img src="<?php echo base_url().'assets/images/logo-tiktok.png'; ?>" class="img-fluid img-socmed"></a>
+    </div>
 </div>

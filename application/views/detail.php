@@ -49,10 +49,11 @@
                             </div>
                         </div>
                         <img class="img-fluid img-header" src="<?php echo base_url().$value['image']; ?>">
+                        <p class="caption-image"><?php echo isset($value['caption_image'])?$value['caption_image']:''; ?></p>
                         <div class="row">
                             <div class="col-lg-3"></div>
                             <div class="col-lg-9">
-                                <div class="detail-body mt-5">
+                                <div class="detail-body mt-4">
                                     <?php echo $value['body']; ?>
                                     <div id="fb-root"></div>
                                     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v13.0" nonce="GrNiXRdp"></script>

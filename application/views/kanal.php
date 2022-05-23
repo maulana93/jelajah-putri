@@ -59,7 +59,7 @@
                                     ?>  
                                     <a href="<?php echo url_format($value); ?>">
                                         <img src="<?php echo base_url().$value['image']; ?>" class="img-fluid mb-2">
-                                        <h2 class="headline-title"><?php echo isset($value['title'])?$value['title']:''; ?></h2>
+                                        <h2 class="headline-title <?php if($value['id_category'] != $this->config->item('kanal-id-opini') && $key==1){ echo 'mb-4'; } ?>"><?php echo isset($value['title'])?$value['title']:''; ?></h2>
                                         <?php if($value['id_category'] == $this->config->item('kanal-id-opini')) { ?>
                                             <div class="kanal-info align-items-center d-flex <?php if($key==1){ echo 'mb-4'; } ?>">
                                                 <div class="mr-2">

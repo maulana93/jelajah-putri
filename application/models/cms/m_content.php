@@ -45,6 +45,7 @@ Class M_content extends CI_Model
 		$data ['is_headline'] = isset($params["is_headline"])?$params["is_headline"]:'';
 		$data ['datecreated'] = isset($params["datecreated"])?$params["datecreated"]:'';
 		$data ['image'] = isset($params["image"])?$params["image"]:'';
+		$data ['caption_image'] = isset($params["caption_image"])?$params["caption_image"]:'';
 		$data ['profile_image'] = isset($params["profile_image"])?$params["profile_image"]:'';
 		$data ['profile_name'] = isset($params["profile_name"])?$params["profile_name"]:'';
 		$data ['status'] = isset($params["status"])?$params["status"]:'';
@@ -67,6 +68,7 @@ Class M_content extends CI_Model
 		$id_user = isset($params["id_user"])?$params["id_user"]:'';
 		$is_headline = isset($params["is_headline"])?$params["is_headline"]:'';
 		$image = isset($params["image"])?$params["image"]:'';
+		$caption_image = isset($params["caption_image"])?$params["caption_image"]:'';
 		$profile_image = isset($params["profile_image"])?$params["profile_image"]:'';
 		$profile_name = isset($params["profile_name"])?$params["profile_name"]:'';
 		$status = isset($params["status"])?$params["status"]:'';
@@ -80,6 +82,7 @@ Class M_content extends CI_Model
 			,id_user = '".$this->db->escape_str($id_user)."'
 			,is_headline = '".$this->db->escape_str($is_headline)."'
 			,image = '".$this->db->escape_str($image)."'
+			,caption_image = '".$this->db->escape_str($caption_image)."'
 			,profile_image = '".$this->db->escape_str($profile_image)."'
 			,profile_name = '".$this->db->escape_str($profile_name)."'
 			,status = '".$this->db->escape_str($status)."'
