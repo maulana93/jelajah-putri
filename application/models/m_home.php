@@ -107,7 +107,7 @@ Class M_home extends CI_Model
 	private function __getHeadlineContentSQL($id_category){
 		$result = array();
 		$query = $this->db->query("
-			SELECT * FROM content WHERE status = 1 AND id_category=".$id_category." ORDER BY id DESC LIMIT 0,1
+			SELECT * FROM content WHERE status = 1 AND is_headline = 1 AND id_category=".$id_category." ORDER BY id DESC LIMIT 0,1
 		");
 		$result = $query->result_array();
 		return $result;

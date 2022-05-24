@@ -50,14 +50,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'home';
-$route['404_override'] = '';
+$route['404_override'] = 'notfoundpage';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['bekerja'] = "kanal/index/bekerja";
 $route['bertualang'] = "kanal/index/bertualang";
 $route['berbakti'] = "kanal/index/berbakti";
 $route['opini'] = "kanal/index/opini";
-$route['detail/(:any)/(:any)'] = "detail/index/$1/$2";
+$route['baca/(:any)/(:any)'] = "detail/index/$1/$2";
 
 $route['login'] = "cms/login";
 

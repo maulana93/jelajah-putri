@@ -3,7 +3,7 @@
     if(isset($banner) && count($banner)>0){ 
         foreach($banner as $key => $value){ 
             ?>
-            <a href="<?php echo $value['url']; ?>">
+            <a target="_blank" href="<?php echo $value['url']; ?>">
                 <img src="<?php echo base_url().$value['image']; ?>" class="img-banner mb-3 img-fluid">
             </a>
             <?php
@@ -18,8 +18,7 @@
     <h4 class="mt-3">FIND US ON SOCIAL MEDIA</H4>
     <div class="d-flex justify-content-between">
         <a href="https://www.instagram.com/jelajahputri"><img src="<?php echo base_url().'assets/images/logo-ig.png'; ?>" class="img-fluid img-socmed mr-3"></a>
-        <a href=""><img src="<?php echo base_url().'assets/images/logo-fb.png'; ?>" class="img-fluid img-socmed mr-3"></a>
-        <a href=""><img src="<?php echo base_url().'assets/images/logo-linkedin.png'; ?>" class="img-fluid img-socmed mr-3"></a>
+        <a href="https://www.facebook.com/1810601745899364/posts/pfbid0bjskedcfdqsg9PbHrwoNUzQKd3BNCje6Ea2qcwQcyceEzyMXNWeACotfLcLHKi71l"><img src="<?php echo base_url().'assets/images/logo-fb.png'; ?>" class="img-fluid img-socmed mr-3"></a>
         <a href=""><img src="<?php echo base_url().'assets/images/logo-youtube.png'; ?>" class="img-fluid img-socmed mr-3"></a>
         <a href="http://www.tiktok.com/@jelajahputri"><img src="<?php echo base_url().'assets/images/logo-tiktok.png'; ?>" class="img-fluid img-socmed"></a>
     </div>

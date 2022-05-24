@@ -3,9 +3,9 @@
         <div class="row pt-5">
             <div class="col-lg-9">
                 <?php 
-                    if (isset($listsSearch)) { 
+                    if (isset($lists)) { 
                         ?>  
-                        <p style="font-family: 'Barlow';">Ada <?php echo count($listsSearch); ?> hasil pencarian untuk <b>"<?php echo $keyword; ?>"</b></p>            
+                        <p style="font-family: 'Barlow';">Ada <?php echo count($lists); ?> hasil pencarian untuk <b>"<?php echo $keyword; ?>"</b></p>            
                         <?php
                     }
                 ?>    

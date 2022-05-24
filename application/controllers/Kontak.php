@@ -36,27 +36,27 @@ public function __construct()
 
 			// SMTP configuration
 			$mail->isSMTP();
-			$mail->Host     = 'mail.jelajahputri.com';
+			$mail->Host     = 'smtp.gmail.com';
 			$mail->SMTPAuth = true;
-			$mail->Username = 'info@jelajahputri.com'; // user email anda
-			$mail->Password = 'Info@jelajah123'; // password email anda
+			$mail->Username = $this->config->item('email-info-gmail'); // user email anda
+			$mail->Password = $this->config->item('password-email-info-gmail'); // password email anda
 			$mail->SMTPSecure = 'ssl';
 			$mail->Port     = 465;
 
-			$mail->setFrom('info@jelajahputri.com', $name.', Hubungi Kami'); // user email anda
-			$mail->addReplyTo('info@jelajahputri.com', ''); //user email anda
+			$mail->setFrom($this->config->item('email-info-gmail'), $name.', Hubungi Kami'); // user email anda
+			$mail->addReplyTo($email, ''); //user email anda
 
 			// Email subject
 			$mail->Subject = 'Partnership'; //subject email
 
 			// Add a recipient
-			$mail->addAddress('maulanaciel@gmail.com'); //email tujuan pengiriman email
+			$mail->addAddress($this->config->item('email-kontak-jelajahputri')); //email tujuan pengiriman email
 
 			// Set email format to HTML
 			$mail->isHTML(true);
 
 			// Email body content
-			$mailContent = "<p>Hallo tim Jelajahputri, silahkan kontak partner berikut:</p>
+			$mailContent = "<p>Hallo tim Jelajahputri, Ada pesan masuk:</p>
 			<table>
 				<tr>
 					<td>Nama</td>
@@ -96,6 +96,9 @@ public function __construct()
 				$data['messages'] = "";
 			}
 			
+			$data['title'] = 'Jelajah Putri - Hubungi Kami';
+			$data['menu_active'] = 'kontak';
+			$data['banner'] = $this->m_banner->listData();			
 			$this->load->view('kontak',$data);
 		}
     }

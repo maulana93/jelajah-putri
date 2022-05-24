@@ -15,6 +15,7 @@ public function __construct()
 		$data['banner'] = $this->m_banner->listData();
 		if(isset($_GET['q'])){
 			$keyword = $_GET['q'];
+			$data['lists'] = $this->m_search->listdata(array('keyword'=>$keyword));
 			$data['listsSearch'] = $this->m_search->listdata(array('keyword'=>$keyword,'limit'=>10));
 			// echo "<pre>";var_dump($data['listsSearch']);exit();
 			$data['keyword'] = $keyword;

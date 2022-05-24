@@ -5,6 +5,6 @@ function url_format($array) {
   $id = isset($array['id'])?$array['id']:0;
   $slug = isset($array['slug'])?addslashes($array['slug']):'-';
 
-  return base_url().'detail/'.$id.'/'.$slug;  
+  return base_url().'baca/'.$id.'/'.$slug;  
   
 }

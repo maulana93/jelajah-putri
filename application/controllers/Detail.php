@@ -10,9 +10,9 @@ public function __construct()
 	$this->load->model(array('m_content','m_kanal','m_banner'),'',TRUE);	
 	$this->load->helper(array('text_helper'),'',TRUE);		
 }
-	public function index($id='')
+	public function index($id,$slug)
 	{
-		$data['title'] = 'Jelajah Putri - Detail';
+		$data['title'] = 'Jelajah Putri - '.$slug;
 		$data['menu_active'] = '';
 		
 		$data['detail'] = $this->m_content->listdata(array('id'=>$id));
