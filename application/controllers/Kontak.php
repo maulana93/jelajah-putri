@@ -38,12 +38,12 @@ public function __construct()
 			$mail->isSMTP();
 			$mail->Host     = 'smtp.gmail.com';
 			$mail->SMTPAuth = true;
-			$mail->Username = $this->config->item('email-info-gmail'); // user email anda
-			$mail->Password = $this->config->item('password-email-info-gmail'); // password email anda
+			$mail->Username = $this->config->item('email-noreply-gmail'); // user email anda
+			$mail->Password = $this->config->item('password-email-noreply-gmail'); // password email anda
 			$mail->SMTPSecure = 'ssl';
 			$mail->Port     = 465;
 
-			$mail->setFrom($this->config->item('email-info-gmail'), $name.', Hubungi Kami'); // user email anda
+			$mail->setFrom($this->config->item('email-noreply-gmail'), $name.', Hubungi Kami'); // user email anda
 			$mail->addReplyTo($email, ''); //user email anda
 
 			// Email subject

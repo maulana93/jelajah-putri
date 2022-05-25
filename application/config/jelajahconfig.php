@@ -13,7 +13,7 @@ $config["kanal-id-bertualang"] = "2";
 $config["kanal-id-berbakti"] = "3";
 $config["kanal-id-opini"] = "4";
 
-$config["email-info-gmail"] = "infojelajahputri@gmail.com";
-$config["password-email-info-gmail"] = "Infojp12345!";
-$config["email-kontak-jelajahputri"] = "maulanaciel@gmail.com";
+$config["email-noreply-gmail"] = "noreply.jelajahputri@gmail.com";
+$config["password-email-noreply-gmail"] = "Noreplyjp123!";
+$config["email-kontak-jelajahputri"] = "infojelajahputri@gmail.com";
 
