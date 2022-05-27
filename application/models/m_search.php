@@ -46,9 +46,7 @@ Class M_search extends CI_Model
 
 		if($keyword != '') {
 			$conditional .= "
-				AND title like '%".$this->db->escape_str($keyword)."%'
-				OR summary like '%".$this->db->escape_str($keyword)."%'
-				OR body like '%".$this->db->escape_str($keyword)."%'
+				AND body like '%".$this->db->escape_str($keyword)."%'
 			";
 		}
 

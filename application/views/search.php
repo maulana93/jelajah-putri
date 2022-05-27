@@ -61,6 +61,7 @@
                         ?>
                         <?php if ($key == count($listsSearch) - 1){ ?>
                             <input type="hidden" value="<?php echo $value['id']; ?>" class="last_id">
+                            <input type="hidden" value="<?php echo $keyword; ?>" class="keyword">
                         <?php } ?>
                         <?php
                     }
@@ -78,17 +79,20 @@
                 <script>
                     function load_click(){
                         var last_id  = $(".last_id").val();
+                        var keyword  = $(".keyword").val();
                         $.ajax({  
                                 url: "<?php echo base_url().'search/getAllDataNext/'; ?>",
                                 method: "POST",
                                 data: {
-                                        last_id: last_id
+                                        last_id: last_id,
+                                        keyword: keyword,
                                 },
                                 dataType: "text", 
                                 success: function(data){
                                     var cekdata = data.includes("<article");
                                     if(cekdata){
                                         $('.last_id').remove();
+                                        $('.keyword').remove();
                                         $(".list-news").append(data);
                                         $("#load_button").show();
                                     } else {

@@ -5,6 +5,7 @@ if (isset($listsSearch) && count($listsSearch)>0) {
     ?>  
     <?php if ($key == count($listsSearch) - 1){ ?>
         <input type="hidden" value="<?php echo $value['id']; ?>" class="last_id">
+        <input type="hidden" value="<?php echo $keyword; ?>" class="keyword">
     <?php } ?>
 
         <article>

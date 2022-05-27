@@ -12,6 +12,8 @@ public function __construct()
 }
 	public function index()
 	{	
+		$data['title'] = 'Jelajah Putri - Search';
+
 		$data['banner'] = $this->m_banner->listData();
 		if(isset($_GET['q'])){
 			$keyword = $_GET['q'];
@@ -25,13 +27,14 @@ public function __construct()
 		}
 	}
 	function getAllDataNext(){
-		$keyword = '';
+		$data['title'] = 'Jelajah Putri - Search';
+
 		$last_id = $this->input->post('last_id');
-		if(isset($_GET['q'])){
-			$keyword = $_GET['q'];
-		}
+		$keyword = $this->input->post('keyword');
 
 		$data['listsSearch'] = $this->m_search->listContent(array('keyword'=>$keyword,'last_id'=>$last_id,'limit'=>10));
+		
+		$data['keyword'] = $keyword;
 		$this->load->view('searchnext',$data);
 	}
 }
