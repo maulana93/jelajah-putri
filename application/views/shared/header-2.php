@@ -15,6 +15,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
         <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.js"></script>
         <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-DMQ2CGLHKT"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-DMQ2CGLHKT');
+        </script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light navbar--page">
