@@ -12,7 +12,7 @@
     ?>
     <div class="d-flex justify-content-between">
         <h4>FOLLOW US</H4>
-        <P>@jelajahputri</p>
+        <a target="_blank" href="https://www.instagram.com/jelajahputri/"><p>@jelajahputri</p></a>
     </div>
     <div class="elfsight-app-dc205a0e-1be2-42ae-9533-440bca657f88 mt-3" style="display: block;"></div>
     <h4 class="mt-3">FIND US ON SOCIAL MEDIA</H4>

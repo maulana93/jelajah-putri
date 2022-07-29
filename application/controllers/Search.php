@@ -12,7 +12,7 @@ public function __construct()
 }
 	public function index()
 	{	
-		$data['title'] = 'Jelajah Putri - Search';
+		$data['title'] = 'Search';
 
 		$data['banner'] = $this->m_banner->listData();
 		if(isset($_GET['q'])){
@@ -27,7 +27,7 @@ public function __construct()
 		}
 	}
 	function getAllDataNext(){
-		$data['title'] = 'Jelajah Putri - Search';
+		$data['title'] = 'Search';
 
 		$last_id = $this->input->post('last_id');
 		$keyword = $this->input->post('keyword');
